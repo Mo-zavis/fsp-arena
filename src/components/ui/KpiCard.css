@@ -1,0 +1,26 @@
+.kpi-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 20px 16px;
+  background: var(--fsp-off-white);
+  border-radius: var(--fsp-radius-sm);
+  text-align: center;
+}
+
+.kpi-value {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--fsp-text);
+  line-height: 1.2;
+}
+
+.kpi-label {
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--fsp-text-sec);
+}

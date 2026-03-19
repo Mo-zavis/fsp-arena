@@ -1,0 +1,81 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  border-radius: var(--fsp-radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: opacity 0.15s, background 0.15s, border-color 0.15s;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn--full {
+  width: 100%;
+}
+
+/* Primary */
+.btn--primary {
+  background: var(--fsp-blue);
+  color: var(--fsp-white);
+  border-color: var(--fsp-blue);
+}
+
+.btn--primary:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+/* Outline */
+.btn--outline {
+  background: transparent;
+  color: var(--fsp-blue);
+  border-color: var(--fsp-border);
+}
+
+.btn--outline:hover:not(:disabled) {
+  border-color: var(--fsp-blue);
+}
+
+/* Ghost (on blue backgrounds) */
+.btn--ghost {
+  background: transparent;
+  color: var(--fsp-white);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.btn--ghost:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Green */
+.btn--green {
+  background: #16a34a;
+  color: var(--fsp-white);
+  border-color: #16a34a;
+}
+
+.btn--green:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+/* Red */
+.btn--red {
+  background: #dc2626;
+  color: var(--fsp-white);
+  border-color: #dc2626;
+}
+
+.btn--red:hover:not(:disabled) {
+  opacity: 0.9;
+}

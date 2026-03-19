@@ -1,0 +1,223 @@
+.explore-page {
+  padding: 80px 16px 40px;
+}
+
+.explore-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.explore-title {
+  font-family: 'Archivo', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--fsp-text);
+  margin-bottom: 20px;
+}
+
+/* Search */
+.explore-search {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.explore-search__icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--fsp-text-dim);
+  pointer-events: none;
+}
+
+.explore-search__input {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  font-family: 'Archivo', sans-serif;
+  font-size: 14px;
+  color: var(--fsp-text);
+  background: var(--fsp-off-white);
+  border: 1px solid var(--fsp-border);
+  border-radius: var(--fsp-radius-sm);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.explore-search__input::placeholder {
+  color: var(--fsp-text-dim);
+}
+
+.explore-search__input:focus {
+  border-color: var(--fsp-blue);
+}
+
+/* Filter chips */
+.explore-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.explore-chip {
+  padding: 8px 16px;
+  font-family: 'Archivo', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--fsp-text-sec);
+  background: var(--fsp-off-white);
+  border: 1px solid var(--fsp-border);
+  border-radius: var(--fsp-radius-pill);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.explore-chip:hover {
+  border-color: var(--fsp-blue);
+  color: var(--fsp-blue);
+}
+
+.explore-chip--active {
+  background: var(--fsp-blue);
+  color: var(--fsp-white);
+  border-color: var(--fsp-blue);
+}
+
+.explore-chip--active:hover {
+  color: var(--fsp-white);
+}
+
+/* Empty state */
+.explore-empty {
+  text-align: center;
+  padding: 48px 16px;
+  color: var(--fsp-text-dim);
+  font-size: 14px;
+}
+
+/* Grid */
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 640px) {
+  .explore-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card */
+.arena-card {
+  background: var(--fsp-white);
+  border: 1px solid var(--fsp-border);
+  border-radius: var(--fsp-radius-md);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.arena-card:hover {
+  box-shadow: var(--fsp-shadow-md);
+}
+
+.arena-card__cover {
+  height: 120px;
+  position: relative;
+}
+
+.arena-card__badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 10px;
+  font-family: 'Archivo', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--fsp-white);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  border-radius: var(--fsp-radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.arena-card__body {
+  padding: 14px 16px 16px;
+}
+
+.arena-card__name {
+  font-family: 'Archivo', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--fsp-text);
+  margin-bottom: 6px;
+}
+
+.arena-card__sport {
+  display: inline-block;
+  padding: 2px 8px;
+  font-family: 'Archivo', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--fsp-blue);
+  background: rgba(0, 0, 255, 0.06);
+  border-radius: var(--fsp-radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.arena-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.arena-card__stat {
+  font-size: 12px;
+  color: var(--fsp-text-sec);
+}
+
+.arena-card__dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--fsp-text-dim);
+}
+
+.arena-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.arena-card__fee {
+  font-family: 'Archivo', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--fsp-text);
+}
+
+.arena-card__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px;
+  font-family: 'Archivo', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--fsp-blue);
+  background: transparent;
+  border: 1px solid var(--fsp-border);
+  border-radius: var(--fsp-radius-sm);
+  text-decoration: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.arena-card__btn:hover {
+  border-color: var(--fsp-blue);
+  background: rgba(0, 0, 255, 0.04);
+}

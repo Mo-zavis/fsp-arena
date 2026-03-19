@@ -1,0 +1,28 @@
+.tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--fsp-border);
+}
+
+.tabs-tab {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--fsp-text-sec);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.tabs-tab:hover {
+  color: var(--fsp-text);
+}
+
+.tabs-tab--active {
+  color: var(--fsp-blue);
+  border-bottom-color: var(--fsp-blue);
+}

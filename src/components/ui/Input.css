@@ -1,0 +1,40 @@
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-label {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--fsp-text-sec);
+}
+
+.input-field {
+  padding: 10px 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--fsp-text);
+  background: var(--fsp-white);
+  border: 1px solid var(--fsp-border);
+  border-radius: 10px;
+  transition: border-color 0.15s;
+  width: 100%;
+  font-family: inherit;
+}
+
+.input-field::placeholder {
+  color: var(--fsp-text-dim);
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--fsp-blue);
+}
+
+textarea.input-field {
+  resize: vertical;
+  min-height: 100px;
+}

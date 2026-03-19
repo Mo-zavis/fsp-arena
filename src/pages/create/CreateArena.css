@@ -1,0 +1,594 @@
+/* ── Create Arena Wizard ── */
+:root {
+  --fsp-blue: #0000FF;
+  --fsp-border: #E6E6E6;
+  --fsp-text: #4D4D4D;
+  --fsp-text-sec: #6A6D78;
+  --fsp-text-dim: #B1B1B1;
+  --fsp-off-white: #FAFAFA;
+  --fsp-green: #16a34a;
+  --fsp-radius-sm: 12px;
+}
+
+.ca-shell {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 80px 20px 40px;
+  font-family: 'Archivo', sans-serif;
+  color: var(--fsp-text);
+}
+
+/* ── Top bar ── */
+.ca-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.ca-close {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fsp-text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.ca-close:hover {
+  color: var(--fsp-blue);
+}
+
+.ca-step-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--fsp-text-sec);
+}
+
+/* ── Progress bar ── */
+.ca-progress-track {
+  width: 100%;
+  height: 3px;
+  background: var(--fsp-border);
+  border-radius: 2px;
+  margin-bottom: 32px;
+  overflow: hidden;
+}
+
+.ca-progress-fill {
+  height: 100%;
+  background: var(--fsp-blue);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+/* ── Content area ── */
+.ca-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 4px;
+}
+
+.ca-subtitle {
+  font-size: 14px;
+  color: var(--fsp-text-sec);
+  margin: 0 0 28px;
+}
+
+/* ── Field group ── */
+.ca-field {
+  margin-bottom: 22px;
+}
+
+.ca-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--fsp-text-sec);
+  margin-bottom: 6px;
+  letter-spacing: 0.3px;
+}
+
+.ca-char-count {
+  font-weight: 400;
+  color: var(--fsp-text-dim);
+  text-transform: none;
+}
+
+.ca-input,
+.ca-textarea,
+.ca-select {
+  width: 100%;
+  padding: 10px 12px;
+  font-family: 'Archivo', sans-serif;
+  font-size: 14px;
+  color: var(--fsp-text);
+  border: 1px solid var(--fsp-border);
+  border-radius: var(--fsp-radius-sm);
+  background: #fff;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.ca-input:focus,
+.ca-textarea:focus,
+.ca-select:focus {
+  border-color: var(--fsp-blue);
+}
+
+.ca-textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* ── Date row ── */
+.ca-date-row {
+  display: flex;
+  gap: 12px;
+}
+
+.ca-date-row .ca-field {
+  flex: 1;
+}
+
+/* ── Upload zones ── */
+.ca-upload-zone {
+  border: 2px dashed var(--fsp-border);
+  border-radius: var(--fsp-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  color: var(--fsp-text-dim);
+  font-size: 13px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.ca-upload-zone:hover {
+  border-color: var(--fsp-blue);
+  color: var(--fsp-blue);
+}
+
+.ca-upload-zone.has-file {
+  border-style: solid;
+  border-color: var(--fsp-blue);
+  color: var(--fsp-blue);
+}
+
+.ca-upload-cover {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+.ca-upload-logo {
+  width: 80px;
+  height: 80px;
+}
+
+.ca-upload-hero {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+.ca-upload-gallery-row {
+  display: flex;
+  gap: 8px;
+}
+
+.ca-upload-gallery-slot {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+}
+
+.ca-upload-zone input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.ca-upload-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Sports step ── */
+.ca-sport-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--fsp-border);
+}
+
+.ca-sport-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ca-sport-price {
+  font-size: 13px;
+  color: var(--fsp-text-sec);
+  margin-left: auto;
+  margin-right: 12px;
+}
+
+.ca-sport-remove {
+  background: none;
+  border: none;
+  color: var(--fsp-text-dim);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.ca-sport-remove:hover {
+  color: #ef4444;
+}
+
+.ca-add-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fsp-blue);
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.ca-add-link:hover {
+  text-decoration: underline;
+}
+
+.ca-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
+  margin: 28px 0 12px;
+}
+
+.ca-subsidy-calc {
+  font-size: 13px;
+  color: var(--fsp-text-sec);
+  margin-top: 8px;
+}
+
+/* ── Slider rows ── */
+.ca-slider-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.ca-slider-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--fsp-text);
+  min-width: 80px;
+}
+
+.ca-slider-track {
+  flex: 1;
+  position: relative;
+  height: 6px;
+  background: var(--fsp-border);
+  border-radius: 3px;
+  overflow: visible;
+}
+
+.ca-slider-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.15s;
+}
+
+.ca-slider-input {
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 100%;
+  height: 18px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  margin: 0;
+}
+
+.ca-slider-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--fsp-blue);
+  cursor: pointer;
+}
+
+.ca-slider-input::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--fsp-blue);
+  cursor: pointer;
+}
+
+.ca-slider-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fsp-text);
+  min-width: 40px;
+  text-align: right;
+}
+
+.ca-total-row {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fsp-text);
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+/* ── Number inputs row ── */
+.ca-number-row {
+  display: flex;
+  gap: 12px;
+}
+
+.ca-number-row .ca-field {
+  flex: 1;
+}
+
+.ca-input-number {
+  width: 100%;
+  padding: 10px 12px;
+  font-family: 'Archivo', sans-serif;
+  font-size: 14px;
+  color: var(--fsp-text);
+  border: 1px solid var(--fsp-border);
+  border-radius: var(--fsp-radius-sm);
+  background: #fff;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.ca-input-number:focus {
+  border-color: var(--fsp-blue);
+}
+
+/* ── Divisions ── */
+.ca-division-block {
+  margin-bottom: 20px;
+}
+
+.ca-division-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 6px;
+}
+
+.ca-division-note {
+  font-size: 13px;
+  color: var(--fsp-text-sec);
+}
+
+.ca-preview-box {
+  background: var(--fsp-off-white);
+  border-radius: var(--fsp-radius-sm);
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.ca-preview-box h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111;
+  margin: 0 0 8px;
+}
+
+.ca-preview-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--fsp-text-sec);
+  padding: 4px 0;
+}
+
+.ca-preview-item span:last-child {
+  font-weight: 600;
+  color: var(--fsp-text);
+}
+
+/* ── Revenue calc ── */
+.ca-calc-section {
+  background: var(--fsp-off-white);
+  border-radius: var(--fsp-radius-sm);
+  padding: 16px;
+  margin-top: 20px;
+}
+
+.ca-calc-section h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111;
+  margin: 0 0 10px;
+}
+
+.ca-calc-prompt {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--fsp-text-sec);
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.ca-calc-inline-input {
+  width: 80px;
+  padding: 4px 8px;
+  font-family: 'Archivo', sans-serif;
+  font-size: 13px;
+  border: 1px solid var(--fsp-border);
+  border-radius: 6px;
+  text-align: center;
+  outline: none;
+}
+
+.ca-calc-inline-input:focus {
+  border-color: var(--fsp-blue);
+}
+
+.ca-calc-total {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.ca-calc-breakdown {
+  font-size: 13px;
+  color: var(--fsp-text-sec);
+  padding: 4px 0;
+}
+
+/* ── Review step ── */
+.ca-summary-card {
+  border-radius: var(--fsp-radius-sm);
+  overflow: hidden;
+  margin-bottom: 20px;
+  border: 1px solid var(--fsp-border);
+}
+
+.ca-summary-header {
+  padding: 28px 20px 20px;
+  color: #fff;
+  position: relative;
+}
+
+.ca-summary-arena-name {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.ca-summary-meta {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.ca-summary-rows {
+  padding: 16px 20px;
+}
+
+.ca-summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--fsp-border);
+  font-size: 13px;
+}
+
+.ca-summary-row:last-child {
+  border-bottom: none;
+}
+
+.ca-summary-row-label {
+  color: var(--fsp-text-sec);
+}
+
+.ca-summary-row-value {
+  font-weight: 600;
+  color: var(--fsp-text);
+}
+
+.ca-disclaimer {
+  font-size: 12px;
+  color: var(--fsp-text-dim);
+  margin: 16px 0 24px;
+  line-height: 1.5;
+}
+
+/* ── Bottom buttons ── */
+.ca-bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--fsp-border);
+}
+
+.ca-btn-back {
+  font-family: 'Archivo', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fsp-text-sec);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+.ca-btn-back:hover {
+  color: var(--fsp-text);
+}
+
+.ca-btn-continue {
+  font-family: 'Archivo', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--fsp-blue);
+  border: none;
+  border-radius: var(--fsp-radius-sm);
+  padding: 12px 32px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.ca-btn-continue:hover {
+  opacity: 0.9;
+}
+
+.ca-btn-launch {
+  background: var(--fsp-green);
+}
+
+/* ── Utility ── */
+.ca-hidden {
+  visibility: hidden;
+}
+
+.ca-select-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.ca-select-row .ca-field {
+  flex: 1;
+}

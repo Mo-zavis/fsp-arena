@@ -1,0 +1,416 @@
+.jf-page {
+  min-height: 100vh;
+  background: var(--fsp-white);
+}
+
+/* Top bar */
+.jf-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  background: var(--fsp-white);
+  border-bottom: 1px solid var(--fsp-border);
+  z-index: 100;
+}
+
+.jf-topbar__back {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid var(--fsp-border);
+  border-radius: 50%;
+  color: var(--fsp-text);
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.jf-topbar__back:hover {
+  border-color: var(--fsp-blue);
+}
+
+.jf-topbar__title {
+  font-family: 'Archivo', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--fsp-text);
+}
+
+/* Container */
+.jf-container {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 76px 16px 40px;
+}
+
+/* Stepper */
+.jf-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.jf-stepper__item {
+  display: flex;
+  align-items: center;
+}
+
+.jf-stepper__circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Archivo', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fsp-text-dim);
+  background: var(--fsp-off-white);
+  border: 2px solid var(--fsp-border);
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.jf-stepper__circle--active {
+  color: var(--fsp-white);
+  background: var(--fsp-blue);
+  border-color: var(--fsp-blue);
+}
+
+.jf-stepper__circle--done {
+  color: var(--fsp-white);
+  background: var(--fsp-blue);
+  border-color: var(--fsp-blue);
+}
+
+.jf-stepper__line {
+  width: 60px;
+  height: 2px;
+  background: var(--fsp-border);
+  margin: 0 8px;
+  transition: background 0.2s;
+}
+
+.jf-stepper__line--done {
+  background: var(--fsp-blue);
+}
+
+/* Step */
+.jf-step__title {
+  font-family: 'Archivo', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--fsp-text);
+  margin-bottom: 20px;
+}
+
+/* Sport cards */
+.jf-sports {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.jf-sport-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: var(--fsp-white);
+  border: 2px solid var(--fsp-border);
+  border-radius: var(--fsp-radius-sm);
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.jf-sport-card:hover {
+  border-color: var(--fsp-blue);
+}
+
+.jf-sport-card--selected {
+  border-color: var(--fsp-blue);
+  background: rgba(0, 0, 255, 0.03);
+}
+
+.jf-sport-card__name {
+  font-family: 'Archivo', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--fsp-text);
+}
+
+/* Subsidy note */
+.jf-subsidy {
+  padding: 12px 16px;
+  background: rgba(0, 0, 255, 0.04);
+  border: 1px solid rgba(0, 0, 255, 0.12);
+  border-radius: var(--fsp-radius-sm);
+  font-size: 13px;
+  color: var(--fsp-blue);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+/* Buttons */
+.jf-btn {
+  width: 100%;
+  padding: 14px 24px;
+  font-family: 'Archivo', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  border: none;
+  border-radius: var(--fsp-radius-sm);
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.jf-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.jf-btn--primary {
+  background: var(--fsp-blue);
+  color: var(--fsp-white);
+}
+
+.jf-btn--primary:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+/* Summary */
+.jf-summary {
+  background: var(--fsp-off-white);
+  border: 1px solid var(--fsp-border);
+  border-radius: var(--fsp-radius-sm);
+  padding: 4px 0;
+  margin-bottom: 20px;
+}
+
+.jf-summary__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+}
+
+.jf-summary__row + .jf-summary__row {
+  border-top: 1px solid var(--fsp-border);
+}
+
+.jf-summary__label {
+  font-size: 13px;
+  color: var(--fsp-text-sec);
+}
+
+.jf-summary__value {
+  font-family: 'Archivo', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fsp-text);
+}
+
+/* Reward preview */
+.jf-reward-preview {
+  margin-bottom: 20px;
+}
+
+.jf-reward-preview__heading {
+  font-family: 'Archivo', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--fsp-text-dim);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.jf-reward-preview__body {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.jf-reward-preview__img {
+  width: 100px;
+  height: 80px;
+  border-radius: var(--fsp-radius-sm);
+  flex-shrink: 0;
+}
+
+.jf-reward-preview__title {
+  font-family: 'Archivo', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fsp-text);
+  margin-bottom: 4px;
+}
+
+.jf-reward-preview__desc {
+  font-size: 13px;
+  color: var(--fsp-text-sec);
+  line-height: 1.5;
+}
+
+/* Captain info */
+.jf-captain-info {
+  background: var(--fsp-off-white);
+  border: 1px solid var(--fsp-border);
+  border-radius: var(--fsp-radius-sm);
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.jf-captain-info__title {
+  font-family: 'Archivo', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fsp-text);
+  margin-bottom: 6px;
+}
+
+.jf-captain-info__text {
+  font-size: 13px;
+  color: var(--fsp-text-sec);
+  line-height: 1.6;
+}
+
+/* Payment options */
+.jf-payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.jf-pay-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--fsp-white);
+  border: 1px solid var(--fsp-border);
+  border-radius: var(--fsp-radius-sm);
+  cursor: pointer;
+  transition: border-color 0.15s;
+  width: 100%;
+  text-align: left;
+}
+
+.jf-pay-row:hover {
+  border-color: var(--fsp-blue);
+}
+
+.jf-pay-row--selected {
+  border-color: var(--fsp-blue);
+  background: rgba(0, 0, 255, 0.03);
+}
+
+.jf-pay-row__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--fsp-off-white);
+  border: 1px solid var(--fsp-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fsp-text);
+  flex-shrink: 0;
+}
+
+.jf-pay-row__label {
+  font-family: 'Archivo', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fsp-text);
+  flex: 1;
+}
+
+.jf-pay-row__check {
+  flex-shrink: 0;
+}
+
+/* Divider */
+.jf-divider {
+  border: none;
+  border-top: 1px solid var(--fsp-border);
+  margin: 0 0 20px;
+}
+
+/* SP Burn */
+.jf-sp-burn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px;
+  background: var(--fsp-white);
+  border: 2px dashed var(--fsp-border);
+  border-radius: var(--fsp-radius-sm);
+  cursor: pointer;
+  transition: border-color 0.15s;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.jf-sp-burn:hover {
+  border-color: var(--fsp-blue);
+}
+
+.jf-sp-burn--selected {
+  border-color: var(--fsp-blue);
+  background: rgba(0, 0, 255, 0.03);
+}
+
+.jf-sp-burn__label {
+  font-family: 'Archivo', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fsp-text);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.jf-sp-burn__sub {
+  font-size: 12px;
+  color: var(--fsp-text-sec);
+  display: block;
+}
+
+/* Total */
+.jf-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  margin-bottom: 20px;
+  border-top: 1px solid var(--fsp-border);
+  border-bottom: 1px solid var(--fsp-border);
+}
+
+.jf-total__label {
+  font-family: 'Archivo', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fsp-text);
+}
+
+.jf-total__value {
+  font-family: 'Archivo', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--fsp-text);
+}
