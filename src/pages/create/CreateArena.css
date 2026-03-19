@@ -1,21 +1,10 @@
 /* ── Create Arena Wizard ── */
-:root {
-  --fsp-blue: #0000FF;
-  --fsp-border: #E6E6E6;
-  --fsp-text: #4D4D4D;
-  --fsp-text-sec: #6A6D78;
-  --fsp-text-dim: #B1B1B1;
-  --fsp-off-white: #FAFAFA;
-  --fsp-green: #16a34a;
-  --fsp-radius-sm: 12px;
-}
 
 .ca-shell {
   max-width: 600px;
   margin: 0 auto;
-  padding: 80px 20px 40px;
-  font-family: 'Archivo', sans-serif;
-  color: var(--fsp-text);
+  padding: 16px;
+  color: var(--text-primary);
 }
 
 /* ── Top bar ── */
@@ -29,7 +18,7 @@
 .ca-close {
   font-size: 14px;
   font-weight: 600;
-  color: var(--fsp-text);
+  color: var(--text-primary);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -44,14 +33,14 @@
 .ca-step-label {
   font-size: 13px;
   font-weight: 500;
-  color: var(--fsp-text-sec);
+  color: var(--text-secondary);
 }
 
 /* ── Progress bar ── */
 .ca-progress-track {
   width: 100%;
   height: 3px;
-  background: var(--fsp-border);
+  background: var(--border);
   border-radius: 2px;
   margin-bottom: 32px;
   overflow: hidden;
@@ -74,7 +63,7 @@
 
 .ca-subtitle {
   font-size: 14px;
-  color: var(--fsp-text-sec);
+  color: var(--text-secondary);
   margin: 0 0 28px;
 }
 
@@ -90,14 +79,14 @@
   font-size: 12px;
   font-weight: 500;
   text-transform: uppercase;
-  color: var(--fsp-text-sec);
+  color: var(--text-secondary);
   margin-bottom: 6px;
   letter-spacing: 0.3px;
 }
 
 .ca-char-count {
   font-weight: 400;
-  color: var(--fsp-text-dim);
+  color: var(--text-muted);
   text-transform: none;
 }
 
@@ -106,11 +95,11 @@
 .ca-select {
   width: 100%;
   padding: 10px 12px;
-  font-family: 'Archivo', sans-serif;
+  
   font-size: 14px;
-  color: var(--fsp-text);
-  border: 1px solid var(--fsp-border);
-  border-radius: var(--fsp-radius-sm);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 7px;
   background: #fff;
   outline: none;
   box-sizing: border-box;
@@ -140,14 +129,14 @@
 
 /* ── Upload zones ── */
 .ca-upload-zone {
-  border: 2px dashed var(--fsp-border);
-  border-radius: var(--fsp-radius-sm);
+  border: 2px dashed var(--border);
+  border-radius: 7px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: border-color 0.2s, color 0.2s;
-  color: var(--fsp-text-dim);
+  color: var(--text-muted);
   font-size: 13px;
   text-align: center;
   overflow: hidden;
@@ -210,7 +199,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 12px 0;
-  border-bottom: 1px solid var(--fsp-border);
+  border-bottom: 1px solid var(--border);
 }
 
 .ca-sport-name {
@@ -220,7 +209,7 @@
 
 .ca-sport-price {
   font-size: 13px;
-  color: var(--fsp-text-sec);
+  color: var(--text-secondary);
   margin-left: auto;
   margin-right: 12px;
 }
@@ -228,7 +217,7 @@
 .ca-sport-remove {
   background: none;
   border: none;
-  color: var(--fsp-text-dim);
+  color: var(--text-muted);
   font-size: 16px;
   cursor: pointer;
   padding: 0;
@@ -264,7 +253,7 @@
 
 .ca-subsidy-calc {
   font-size: 13px;
-  color: var(--fsp-text-sec);
+  color: var(--text-secondary);
   margin-top: 8px;
 }
 
@@ -279,7 +268,7 @@
 .ca-slider-label {
   font-size: 13px;
   font-weight: 500;
-  color: var(--fsp-text);
+  color: var(--text-primary);
   min-width: 80px;
 }
 
@@ -287,7 +276,7 @@
   flex: 1;
   position: relative;
   height: 6px;
-  background: var(--fsp-border);
+  background: var(--border);
   border-radius: 3px;
   overflow: visible;
 }
@@ -336,7 +325,7 @@
 .ca-slider-value {
   font-size: 13px;
   font-weight: 600;
-  color: var(--fsp-text);
+  color: var(--text-primary);
   min-width: 40px;
   text-align: right;
 }
@@ -346,7 +335,7 @@
   justify-content: flex-end;
   font-size: 13px;
   font-weight: 600;
-  color: var(--fsp-text);
+  color: var(--text-primary);
   margin-top: 4px;
   margin-bottom: 8px;
 }
@@ -364,11 +353,11 @@
 .ca-input-number {
   width: 100%;
   padding: 10px 12px;
-  font-family: 'Archivo', sans-serif;
+  
   font-size: 14px;
-  color: var(--fsp-text);
-  border: 1px solid var(--fsp-border);
-  border-radius: var(--fsp-radius-sm);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 7px;
   background: #fff;
   outline: none;
   box-sizing: border-box;
@@ -392,12 +381,12 @@
 
 .ca-division-note {
   font-size: 13px;
-  color: var(--fsp-text-sec);
+  color: var(--text-secondary);
 }
 
 .ca-preview-box {
-  background: var(--fsp-off-white);
-  border-radius: var(--fsp-radius-sm);
+  background: var(--bg-muted);
+  border-radius: 7px;
   padding: 16px;
   margin-top: 16px;
 }
@@ -413,19 +402,19 @@
   display: flex;
   justify-content: space-between;
   font-size: 13px;
-  color: var(--fsp-text-sec);
+  color: var(--text-secondary);
   padding: 4px 0;
 }
 
 .ca-preview-item span:last-child {
   font-weight: 600;
-  color: var(--fsp-text);
+  color: var(--text-primary);
 }
 
 /* ── Revenue calc ── */
 .ca-calc-section {
-  background: var(--fsp-off-white);
-  border-radius: var(--fsp-radius-sm);
+  background: var(--bg-muted);
+  border-radius: 7px;
   padding: 16px;
   margin-top: 20px;
 }
@@ -442,7 +431,7 @@
   align-items: center;
   gap: 6px;
   font-size: 13px;
-  color: var(--fsp-text-sec);
+  color: var(--text-secondary);
   flex-wrap: wrap;
   margin-bottom: 12px;
 }
@@ -450,9 +439,9 @@
 .ca-calc-inline-input {
   width: 80px;
   padding: 4px 8px;
-  font-family: 'Archivo', sans-serif;
+  
   font-size: 13px;
-  border: 1px solid var(--fsp-border);
+  border: 1px solid var(--border);
   border-radius: 6px;
   text-align: center;
   outline: none;
@@ -471,16 +460,16 @@
 
 .ca-calc-breakdown {
   font-size: 13px;
-  color: var(--fsp-text-sec);
+  color: var(--text-secondary);
   padding: 4px 0;
 }
 
 /* ── Review step ── */
 .ca-summary-card {
-  border-radius: var(--fsp-radius-sm);
+  border-radius: 7px;
   overflow: hidden;
   margin-bottom: 20px;
-  border: 1px solid var(--fsp-border);
+  border: 1px solid var(--border);
 }
 
 .ca-summary-header {
@@ -508,7 +497,7 @@
   display: flex;
   justify-content: space-between;
   padding: 8px 0;
-  border-bottom: 1px solid var(--fsp-border);
+  border-bottom: 1px solid var(--border);
   font-size: 13px;
 }
 
@@ -517,17 +506,17 @@
 }
 
 .ca-summary-row-label {
-  color: var(--fsp-text-sec);
+  color: var(--text-secondary);
 }
 
 .ca-summary-row-value {
   font-weight: 600;
-  color: var(--fsp-text);
+  color: var(--text-primary);
 }
 
 .ca-disclaimer {
   font-size: 12px;
-  color: var(--fsp-text-dim);
+  color: var(--text-muted);
   margin: 16px 0 24px;
   line-height: 1.5;
 }
@@ -539,14 +528,14 @@
   align-items: center;
   margin-top: 32px;
   padding-top: 20px;
-  border-top: 1px solid var(--fsp-border);
+  border-top: 1px solid var(--border);
 }
 
 .ca-btn-back {
-  font-family: 'Archivo', sans-serif;
+  
   font-size: 14px;
   font-weight: 600;
-  color: var(--fsp-text-sec);
+  color: var(--text-secondary);
   background: none;
   border: none;
   cursor: pointer;
@@ -554,17 +543,17 @@
 }
 
 .ca-btn-back:hover {
-  color: var(--fsp-text);
+  color: var(--text-primary);
 }
 
 .ca-btn-continue {
-  font-family: 'Archivo', sans-serif;
+  
   font-size: 14px;
   font-weight: 600;
   color: #fff;
   background: var(--fsp-blue);
   border: none;
-  border-radius: var(--fsp-radius-sm);
+  border-radius: 7px;
   padding: 12px 32px;
   cursor: pointer;
   transition: opacity 0.2s;
@@ -575,7 +564,7 @@
 }
 
 .ca-btn-launch {
-  background: var(--fsp-green);
+  background: var(--green);
 }
 
 /* ── Utility ── */

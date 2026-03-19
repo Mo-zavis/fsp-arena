@@ -1,6 +1,6 @@
 .js-page {
   min-height: 100vh;
-  background: var(--fsp-white);
+  background: var(--bg-card);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,7 +18,7 @@
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: var(--fsp-green);
+  background: var(--green);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,23 +27,23 @@
 
 /* Title */
 .js-title {
-  font-family: 'Archivo', sans-serif;
+  
   font-size: 28px;
   font-weight: 700;
-  color: var(--fsp-text);
+  color: var(--text-primary);
   margin-bottom: 6px;
 }
 
 .js-subtitle {
   font-size: 14px;
-  color: var(--fsp-text-sec);
+  color: var(--text-secondary);
   margin-bottom: 4px;
 }
 
 /* Divider */
 .js-divider {
   border: none;
-  border-top: 1px solid var(--fsp-border);
+  border-top: 1px solid var(--border);
   margin: 24px 0;
 }
 
@@ -53,16 +53,16 @@
 }
 
 .js-section__title {
-  font-family: 'Archivo', sans-serif;
+  
   font-size: 18px;
   font-weight: 600;
-  color: var(--fsp-text);
+  color: var(--text-primary);
   margin-bottom: 8px;
 }
 
 .js-section__text {
   font-size: 13px;
-  color: var(--fsp-text-sec);
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 
@@ -70,9 +70,9 @@
 .js-referral {
   display: flex;
   align-items: center;
-  background: var(--fsp-off-white);
-  border: 1px solid var(--fsp-border);
-  border-radius: var(--fsp-radius-sm);
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+  border-radius: 7px;
   padding: 10px 12px;
   margin-bottom: 20px;
   gap: 10px;
@@ -80,9 +80,9 @@
 
 .js-referral__link {
   flex: 1;
-  font-family: 'Archivo', sans-serif;
+  
   font-size: 13px;
-  color: var(--fsp-text);
+  color: var(--text-primary);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -91,13 +91,13 @@
 
 .js-referral__copy {
   padding: 6px 14px;
-  font-family: 'Archivo', sans-serif;
+  
   font-size: 12px;
   font-weight: 600;
   color: var(--fsp-blue);
-  background: var(--fsp-white);
-  border: 1px solid var(--fsp-border);
-  border-radius: var(--fsp-radius-xs);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
   cursor: pointer;
   transition: border-color 0.15s;
   flex-shrink: 0;
@@ -114,11 +114,11 @@
   justify-content: center;
   width: 100%;
   padding: 14px 24px;
-  font-family: 'Archivo', sans-serif;
+  
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.3px;
-  border-radius: var(--fsp-radius-sm);
+  border-radius: 7px;
   cursor: pointer;
   transition: opacity 0.15s, border-color 0.15s;
   text-decoration: none;
@@ -127,7 +127,7 @@
 
 .js-btn--primary {
   background: var(--fsp-blue);
-  color: var(--fsp-white);
+  color: var(--bg-card);
   border: 1px solid var(--fsp-blue);
 }
 
@@ -138,7 +138,7 @@
 .js-btn--outline {
   background: transparent;
   color: var(--fsp-blue);
-  border: 1px solid var(--fsp-border);
+  border: 1px solid var(--border);
 }
 
 .js-btn--outline:hover {

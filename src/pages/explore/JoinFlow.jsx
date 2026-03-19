@@ -23,7 +23,7 @@ export default function JoinFlow() {
     return (
       <div className="jf-page">
         <div className="jf-container">
-          <p style={{ textAlign: 'center', color: 'var(--fsp-text-dim)', padding: '100px 16px' }}>
+          <p style={{ textAlign: 'center', color: 'var(--text-muted)', padding: '100px 16px' }}>
             Arena not found.
           </p>
         </div>

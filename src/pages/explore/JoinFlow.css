@@ -1,6 +1,6 @@
 .jf-page {
   min-height: 100vh;
-  background: var(--fsp-white);
+  background: var(--bg-card);
 }
 
 /* Top bar */
@@ -14,8 +14,8 @@
   align-items: center;
   gap: 12px;
   padding: 0 16px;
-  background: var(--fsp-white);
-  border-bottom: 1px solid var(--fsp-border);
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
   z-index: 100;
 }
 
@@ -26,9 +26,9 @@
   align-items: center;
   justify-content: center;
   background: none;
-  border: 1px solid var(--fsp-border);
+  border: 1px solid var(--border);
   border-radius: 50%;
-  color: var(--fsp-text);
+  color: var(--text-primary);
   cursor: pointer;
   transition: border-color 0.15s;
 }
@@ -38,10 +38,10 @@
 }
 
 .jf-topbar__title {
-  font-family: 'Archivo', sans-serif;
+  
   font-size: 16px;
   font-weight: 600;
-  color: var(--fsp-text);
+  color: var(--text-primary);
 }
 
 /* Container */
@@ -71,24 +71,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Archivo', sans-serif;
+  
   font-size: 13px;
   font-weight: 600;
-  color: var(--fsp-text-dim);
-  background: var(--fsp-off-white);
-  border: 2px solid var(--fsp-border);
+  color: var(--text-muted);
+  background: var(--bg-muted);
+  border: 2px solid var(--border);
   flex-shrink: 0;
   transition: all 0.2s;
 }
 
 .jf-stepper__circle--active {
-  color: var(--fsp-white);
+  color: var(--bg-card);
   background: var(--fsp-blue);
   border-color: var(--fsp-blue);
 }
 
 .jf-stepper__circle--done {
-  color: var(--fsp-white);
+  color: var(--bg-card);
   background: var(--fsp-blue);
   border-color: var(--fsp-blue);
 }
@@ -96,7 +96,7 @@
 .jf-stepper__line {
   width: 60px;
   height: 2px;
-  background: var(--fsp-border);
+  background: var(--border);
   margin: 0 8px;
   transition: background 0.2s;
 }
@@ -107,10 +107,10 @@
 
 /* Step */
 .jf-step__title {
-  font-family: 'Archivo', sans-serif;
+  
   font-size: 22px;
   font-weight: 700;
-  color: var(--fsp-text);
+  color: var(--text-primary);
   margin-bottom: 20px;
 }
 
@@ -127,9 +127,9 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px;
-  background: var(--fsp-white);
-  border: 2px solid var(--fsp-border);
-  border-radius: var(--fsp-radius-sm);
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: 7px;
   cursor: pointer;
   transition: border-color 0.15s;
 }
@@ -144,10 +144,10 @@
 }
 
 .jf-sport-card__name {
-  font-family: 'Archivo', sans-serif;
+  
   font-size: 15px;
   font-weight: 600;
-  color: var(--fsp-text);
+  color: var(--text-primary);
 }
 
 /* Subsidy note */
@@ -155,7 +155,7 @@
   padding: 12px 16px;
   background: rgba(0, 0, 255, 0.04);
   border: 1px solid rgba(0, 0, 255, 0.12);
-  border-radius: var(--fsp-radius-sm);
+  border-radius: 7px;
   font-size: 13px;
   color: var(--fsp-blue);
   line-height: 1.5;
@@ -166,12 +166,12 @@
 .jf-btn {
   width: 100%;
   padding: 14px 24px;
-  font-family: 'Archivo', sans-serif;
+  
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.3px;
   border: none;
-  border-radius: var(--fsp-radius-sm);
+  border-radius: 7px;
   cursor: pointer;
   transition: opacity 0.15s;
 }
@@ -183,7 +183,7 @@
 
 .jf-btn--primary {
   background: var(--fsp-blue);
-  color: var(--fsp-white);
+  color: var(--bg-card);
 }
 
 .jf-btn--primary:hover:not(:disabled) {
@@ -192,9 +192,9 @@
 
 /* Summary */
 .jf-summary {
-  background: var(--fsp-off-white);
-  border: 1px solid var(--fsp-border);
-  border-radius: var(--fsp-radius-sm);
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+  border-radius: 7px;
   padding: 4px 0;
   margin-bottom: 20px;
 }
@@ -207,19 +207,19 @@
 }
 
 .jf-summary__row + .jf-summary__row {
-  border-top: 1px solid var(--fsp-border);
+  border-top: 1px solid var(--border);
 }
 
 .jf-summary__label {
   font-size: 13px;
-  color: var(--fsp-text-sec);
+  color: var(--text-secondary);
 }
 
 .jf-summary__value {
-  font-family: 'Archivo', sans-serif;
+  
   font-size: 14px;
   font-weight: 600;
-  color: var(--fsp-text);
+  color: var(--text-primary);
 }
 
 /* Reward preview */
@@ -228,10 +228,10 @@
 }
 
 .jf-reward-preview__heading {
-  font-family: 'Archivo', sans-serif;
+  
   font-size: 11px;
   font-weight: 700;
-  color: var(--fsp-text-dim);
+  color: var(--text-muted);
   letter-spacing: 1.5px;
   text-transform: uppercase;
   margin-bottom: 12px;
@@ -246,44 +246,44 @@
 .jf-reward-preview__img {
   width: 100px;
   height: 80px;
-  border-radius: var(--fsp-radius-sm);
+  border-radius: 7px;
   flex-shrink: 0;
 }
 
 .jf-reward-preview__title {
-  font-family: 'Archivo', sans-serif;
+  
   font-size: 14px;
   font-weight: 600;
-  color: var(--fsp-text);
+  color: var(--text-primary);
   margin-bottom: 4px;
 }
 
 .jf-reward-preview__desc {
   font-size: 13px;
-  color: var(--fsp-text-sec);
+  color: var(--text-secondary);
   line-height: 1.5;
 }
 
 /* Captain info */
 .jf-captain-info {
-  background: var(--fsp-off-white);
-  border: 1px solid var(--fsp-border);
-  border-radius: var(--fsp-radius-sm);
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+  border-radius: 7px;
   padding: 16px;
   margin-bottom: 24px;
 }
 
 .jf-captain-info__title {
-  font-family: 'Archivo', sans-serif;
+  
   font-size: 14px;
   font-weight: 600;
-  color: var(--fsp-text);
+  color: var(--text-primary);
   margin-bottom: 6px;
 }
 
 .jf-captain-info__text {
   font-size: 13px;
-  color: var(--fsp-text-sec);
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 
@@ -300,9 +300,9 @@
   align-items: center;
   gap: 12px;
   padding: 14px 16px;
-  background: var(--fsp-white);
-  border: 1px solid var(--fsp-border);
-  border-radius: var(--fsp-radius-sm);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 7px;
   cursor: pointer;
   transition: border-color 0.15s;
   width: 100%;
@@ -322,20 +322,20 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: var(--fsp-off-white);
-  border: 1px solid var(--fsp-border);
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--fsp-text);
+  color: var(--text-primary);
   flex-shrink: 0;
 }
 
 .jf-pay-row__label {
-  font-family: 'Archivo', sans-serif;
+  
   font-size: 14px;
   font-weight: 600;
-  color: var(--fsp-text);
+  color: var(--text-primary);
   flex: 1;
 }
 
@@ -346,7 +346,7 @@
 /* Divider */
 .jf-divider {
   border: none;
-  border-top: 1px solid var(--fsp-border);
+  border-top: 1px solid var(--border);
   margin: 0 0 20px;
 }
 
@@ -357,9 +357,9 @@
   justify-content: space-between;
   width: 100%;
   padding: 16px;
-  background: var(--fsp-white);
-  border: 2px dashed var(--fsp-border);
-  border-radius: var(--fsp-radius-sm);
+  background: var(--bg-card);
+  border: 2px dashed var(--border);
+  border-radius: 7px;
   cursor: pointer;
   transition: border-color 0.15s;
   text-align: left;
@@ -376,17 +376,17 @@
 }
 
 .jf-sp-burn__label {
-  font-family: 'Archivo', sans-serif;
+  
   font-size: 14px;
   font-weight: 600;
-  color: var(--fsp-text);
+  color: var(--text-primary);
   display: block;
   margin-bottom: 2px;
 }
 
 .jf-sp-burn__sub {
   font-size: 12px;
-  color: var(--fsp-text-sec);
+  color: var(--text-secondary);
   display: block;
 }
 
@@ -397,22 +397,22 @@
   align-items: center;
   padding: 16px 0;
   margin-bottom: 20px;
-  border-top: 1px solid var(--fsp-border);
-  border-bottom: 1px solid var(--fsp-border);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .jf-total__label {
-  font-family: 'Archivo', sans-serif;
+  
   font-size: 14px;
   font-weight: 600;
-  color: var(--fsp-text);
+  color: var(--text-primary);
 }
 
 .jf-total__value {
-  font-family: 'Archivo', sans-serif;
+  
   font-size: 20px;
   font-weight: 700;
-  color: var(--fsp-text);
+  color: var(--text-primary);
 }
 
 @media (max-width: 640px) {

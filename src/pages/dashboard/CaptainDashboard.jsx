@@ -185,6 +185,7 @@ export default function CaptainDashboard() {
   const [tab, setTab] = useState('Leaderboard');
 
   return (
+    <div className="player-page">
     <div className="captain-dashboard">
       <div className="cd-context">
         NELK Boys Arena &mdash; Beer Pong &mdash; Season 1
@@ -231,6 +232,7 @@ export default function CaptainDashboard() {
       {tab === 'Leaderboard' && <LeaderboardTab />}
       {tab === 'My Squad' && <MySquadTab />}
       {tab === 'Payouts' && <PayoutsTab />}
+    </div>
     </div>
   );
 }

@@ -1,15 +1,12 @@
 .captain-dashboard {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 80px 20px 40px;
-  font-family: 'Archivo', sans-serif;
-  color: var(--fsp-text, #4D4D4D);
+  padding: 16px;
+  color: var(--text-primary);
 }
 
 /* Arena Context Header */
 .cd-context {
   font-size: 13px;
-  color: var(--fsp-text-dim, #B1B1B1);
+  color: var(--text-muted);
   letter-spacing: 0.5px;
   margin-bottom: 20px;
 }
@@ -17,7 +14,7 @@
 /* Status Card */
 .cd-status-card {
   background: linear-gradient(135deg, #0000FF 0%, #1a1aff 100%);
-  border-radius: var(--fsp-radius-sm, 12px);
+  border-radius: 7px;
   padding: 24px;
   color: #fff;
   margin-bottom: 24px;
@@ -68,7 +65,7 @@
 .cd-tabs {
   display: flex;
   gap: 0;
-  border-bottom: 1px solid var(--fsp-border, #E6E6E6);
+  border-bottom: 1px solid var(--border);
   margin-bottom: 24px;
 }
 
@@ -76,22 +73,22 @@
   padding: 10px 20px;
   font-size: 14px;
   font-weight: 600;
-  color: var(--fsp-text-dim, #B1B1B1);
+  color: var(--text-muted);
   background: none;
   border: none;
   border-bottom: 2px solid transparent;
   cursor: pointer;
-  font-family: 'Archivo', sans-serif;
+  
   transition: color 0.15s, border-color 0.15s;
 }
 
 .cd-tab:hover {
-  color: var(--fsp-text, #4D4D4D);
+  color: var(--text-primary);
 }
 
 .cd-tab--active {
-  color: var(--fsp-blue, #0000FF);
-  border-bottom-color: var(--fsp-blue, #0000FF);
+  color: var(--fsp-blue);
+  border-bottom-color: var(--fsp-blue);
 }
 
 /* Filter Chips */
@@ -106,18 +103,18 @@
   font-size: 13px;
   font-weight: 600;
   border-radius: 20px;
-  border: 1px solid var(--fsp-border, #E6E6E6);
+  border: 1px solid var(--border);
   background: #fff;
-  color: var(--fsp-text-sec, #6A6D78);
+  color: var(--text-secondary);
   cursor: pointer;
-  font-family: 'Archivo', sans-serif;
+  
   transition: background 0.15s, color 0.15s;
 }
 
 .cd-chip--active {
-  background: var(--fsp-blue, #0000FF);
+  background: var(--fsp-blue);
   color: #fff;
-  border-color: var(--fsp-blue, #0000FF);
+  border-color: var(--fsp-blue);
 }
 
 /* Leaderboard Table */
@@ -130,17 +127,17 @@
   text-align: left;
   font-size: 11px;
   font-weight: 600;
-  color: var(--fsp-text-dim, #B1B1B1);
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   padding: 8px 12px;
-  border-bottom: 1px solid var(--fsp-border, #E6E6E6);
+  border-bottom: 1px solid var(--border);
 }
 
 .cd-table td {
   padding: 10px 12px;
   font-size: 14px;
-  border-bottom: 1px solid var(--fsp-border, #E6E6E6);
+  border-bottom: 1px solid var(--border);
 }
 
 .cd-table tr.cd-row--you {
@@ -171,9 +168,9 @@
 
 /* My Squad Tab */
 .cd-squad-status {
-  background: var(--fsp-off-white, #FAFAFA);
-  border: 1px solid var(--fsp-border, #E6E6E6);
-  border-radius: var(--fsp-radius-sm, 12px);
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+  border-radius: 7px;
   padding: 16px 20px;
   margin-bottom: 20px;
 }
@@ -186,7 +183,7 @@
 
 .cd-squad-status__meta {
   font-size: 13px;
-  color: var(--fsp-text-sec, #6A6D78);
+  color: var(--text-secondary);
 }
 
 .cd-referral-section {
@@ -197,7 +194,7 @@
   font-size: 13px;
   font-weight: 600;
   margin-bottom: 8px;
-  color: var(--fsp-text-sec, #6A6D78);
+  color: var(--text-secondary);
 }
 
 .cd-referral-link-row {
@@ -209,9 +206,9 @@
 .cd-referral-link-text {
   flex: 1;
   font-size: 13px;
-  color: var(--fsp-text-dim, #B1B1B1);
-  background: var(--fsp-off-white, #FAFAFA);
-  border: 1px solid var(--fsp-border, #E6E6E6);
+  color: var(--text-muted);
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 8px 12px;
   overflow: hidden;
@@ -224,11 +221,11 @@
   font-size: 13px;
   font-weight: 600;
   border-radius: 8px;
-  border: 1px solid var(--fsp-blue, #0000FF);
+  border: 1px solid var(--fsp-blue);
   background: #fff;
-  color: var(--fsp-blue, #0000FF);
+  color: var(--fsp-blue);
   cursor: pointer;
-  font-family: 'Archivo', sans-serif;
+  
   white-space: nowrap;
 }
 
@@ -241,7 +238,7 @@
   font-size: 13px;
   font-weight: 600;
   margin-bottom: 10px;
-  color: var(--fsp-text-sec, #6A6D78);
+  color: var(--text-secondary);
 }
 
 .cd-tree-row {
@@ -250,7 +247,7 @@
   gap: 10px;
   padding: 8px 0;
   font-size: 14px;
-  border-bottom: 1px solid var(--fsp-border, #E6E6E6);
+  border-bottom: 1px solid var(--border);
 }
 
 .cd-tree-dot {
@@ -261,7 +258,7 @@
 }
 
 .cd-tree-dot--d1 {
-  background: var(--fsp-blue, #0000FF);
+  background: var(--fsp-blue);
 }
 
 .cd-tree-dot--d2 {
@@ -278,7 +275,7 @@
 }
 
 .cd-tree-row__stat {
-  color: var(--fsp-text-sec, #6A6D78);
+  color: var(--text-secondary);
   font-size: 13px;
 }
 
@@ -287,7 +284,7 @@
   font-size: 13px;
   font-weight: 600;
   margin-bottom: 10px;
-  color: var(--fsp-text-sec, #6A6D78);
+  color: var(--text-secondary);
 }
 
 .cd-member-row {
@@ -296,7 +293,7 @@
   gap: 10px;
   padding: 8px 0;
   font-size: 14px;
-  border-bottom: 1px solid var(--fsp-border, #E6E6E6);
+  border-bottom: 1px solid var(--border);
 }
 
 .cd-depth-tag {
@@ -304,9 +301,9 @@
   font-weight: 700;
   padding: 2px 8px;
   border-radius: 6px;
-  background: var(--fsp-off-white, #FAFAFA);
-  border: 1px solid var(--fsp-border, #E6E6E6);
-  color: var(--fsp-text-sec, #6A6D78);
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
 }
 
 .cd-member-row__handle {
@@ -316,25 +313,25 @@
 
 .cd-member-row__sessions {
   font-size: 13px;
-  color: var(--fsp-text-sec, #6A6D78);
+  color: var(--text-secondary);
 }
 
 .cd-status-active {
   font-size: 12px;
   font-weight: 600;
-  color: var(--fsp-green, #16a34a);
+  color: var(--green);
 }
 
 .cd-status-inactive {
   font-size: 12px;
   font-weight: 600;
-  color: var(--fsp-text-dim, #B1B1B1);
+  color: var(--text-muted);
 }
 
 /* Payouts Tab */
 .cd-total-card {
   background: linear-gradient(135deg, #0000FF 0%, #1a1aff 100%);
-  border-radius: var(--fsp-radius-sm, 12px);
+  border-radius: 7px;
   padding: 28px 24px;
   color: #fff;
   text-align: center;
@@ -356,7 +353,7 @@
 .cd-section-title {
   font-size: 13px;
   font-weight: 600;
-  color: var(--fsp-text-sec, #6A6D78);
+  color: var(--text-secondary);
   margin-bottom: 10px;
 }
 
@@ -365,7 +362,7 @@
   align-items: center;
   padding: 10px 0;
   font-size: 14px;
-  border-bottom: 1px solid var(--fsp-border, #E6E6E6);
+  border-bottom: 1px solid var(--border);
 }
 
 .cd-payout-row__month {
@@ -376,7 +373,7 @@
 .cd-payout-row__tier {
   flex: 1;
   font-size: 13px;
-  color: var(--fsp-text-sec, #6A6D78);
+  color: var(--text-secondary);
 }
 
 .cd-payout-row__amount {
@@ -390,21 +387,21 @@
   padding: 3px 10px;
   border-radius: 6px;
   background: #dcfce7;
-  color: var(--fsp-green, #16a34a);
+  color: var(--green);
 }
 
 /* This Month Pool */
 .cd-pool-card {
-  background: var(--fsp-off-white, #FAFAFA);
-  border: 1px solid var(--fsp-border, #E6E6E6);
-  border-radius: var(--fsp-radius-sm, 12px);
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+  border-radius: 7px;
   padding: 16px 20px;
   margin: 20px 0;
 }
 
 .cd-pool-card__label {
   font-size: 13px;
-  color: var(--fsp-text-sec, #6A6D78);
+  color: var(--text-secondary);
   margin-bottom: 4px;
 }
 
@@ -416,7 +413,7 @@
 
 .cd-pool-card__share {
   font-size: 13px;
-  color: var(--fsp-blue, #0000FF);
+  color: var(--fsp-blue);
   font-weight: 600;
 }
 
@@ -426,7 +423,7 @@
   align-items: center;
   padding: 10px 0;
   font-size: 14px;
-  border-bottom: 1px solid var(--fsp-border, #E6E6E6);
+  border-bottom: 1px solid var(--border);
 }
 
 .cd-tier-row__month {
@@ -437,7 +434,7 @@
 .cd-tier-row__transition {
   flex: 1;
   font-size: 13px;
-  color: var(--fsp-text-sec, #6A6D78);
+  color: var(--text-secondary);
 }
 
 .cd-tier-row__direction {
@@ -446,15 +443,15 @@
 }
 
 .cd-tier-row__direction--hold {
-  color: var(--fsp-text-dim, #B1B1B1);
+  color: var(--text-muted);
 }
 
 .cd-tier-row__direction--up {
-  color: var(--fsp-green, #16a34a);
+  color: var(--green);
 }
 
 .cd-tier-row__direction--new {
-  color: var(--fsp-blue, #0000FF);
+  color: var(--fsp-blue);
 }
 
 @media (max-width: 640px) {

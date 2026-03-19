@@ -39,7 +39,7 @@ export default function JoinSuccess() {
   if (!arena) {
     return (
       <div className="js-page">
-        <p style={{ textAlign: 'center', color: 'var(--fsp-text-dim)', padding: '100px 16px' }}>
+        <p style={{ textAlign: 'center', color: 'var(--text-muted)', padding: '100px 16px' }}>
           Arena not found.
         </p>
       </div>

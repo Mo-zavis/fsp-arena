@@ -19,33 +19,33 @@
   font-size: 12px;
   font-weight: 600;
   flex-shrink: 0;
-  border: 2px solid var(--fsp-border);
+  border: 2px solid var(--border);
   background: transparent;
-  color: var(--fsp-text-dim);
+  color: var(--text-muted);
   transition: background 0.15s, border-color 0.15s, color 0.15s;
 }
 
 .stepper-dot--done {
-  background: var(--fsp-green);
-  border-color: var(--fsp-green);
-  color: var(--fsp-white);
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--bg-card);
 }
 
 .stepper-dot--active {
   background: var(--fsp-blue);
   border-color: var(--fsp-blue);
-  color: var(--fsp-white);
+  color: var(--bg-card);
 }
 
 .stepper-line {
   width: 32px;
   height: 2px;
-  background: var(--fsp-border);
+  background: var(--border);
   transition: background 0.15s;
 }
 
 .stepper-line--done {
-  background: var(--fsp-green);
+  background: var(--green);
 }
 
 @media (max-width: 640px) {

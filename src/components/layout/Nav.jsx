@@ -3,7 +3,7 @@ import { NavLink, Link } from 'react-router-dom';
 import './Nav.css';
 
 const links = [
-  { label: 'Explore', to: '/explore' },
+  { label: 'Explore', to: '/arenas' },
   { label: 'Create', to: '/create' },
   { label: 'Dashboard', to: '/dashboard' },
 ];
@@ -13,20 +13,18 @@ export default function Nav() {
   const close = useCallback(() => setOpen(false), []);
 
   return (
-    <nav className="nav">
-      <div className="nav-inner">
-        <Link to="/" className="nav-logo">
-          FSP<span className="nav-logo-dot">.</span>
+    <nav className="player-nav">
+      <div className="player-nav__inner">
+        <Link to="/" className="player-nav__logo">
+          FSP<span className="player-nav__logo-dot">.</span>
         </Link>
 
-        <ul className={`nav-links${open ? ' open' : ''}`}>
+        <ul className={`player-nav__links${open ? ' open' : ''}`}>
           {links.map(({ label, to }) => (
             <li key={to}>
               <NavLink
                 to={to}
-                className={({ isActive }) =>
-                  `nav-link${isActive ? ' active' : ''}`
-                }
+                className={({ isActive }) => `player-nav__link${isActive ? ' active' : ''}`}
                 onClick={close}
               >
                 {label}
@@ -35,24 +33,21 @@ export default function Nav() {
           ))}
         </ul>
 
-        {open && <div className="nav-overlay open" onClick={close} />}
+        <div className="player-nav__spacer" />
+
+        <Link to="/admin" className="player-nav__admin">Host Panel</Link>
+
+        {open && <div className="player-nav__overlay open" onClick={close} />}
 
         <button
-          className="nav-hamburger"
-          onClick={() => setOpen((v) => !v)}
+          className="player-nav__hamburger"
+          onClick={() => setOpen(v => !v)}
           aria-label="Toggle menu"
         >
           {open ? (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="15" y1="5" x2="5" y2="15" /><line x1="5" y1="5" x2="15" y2="15" /></svg>
           ) : (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-              <line x1="3" y1="7" x2="21" y2="7" />
-              <line x1="3" y1="12" x2="21" y2="12" />
-              <line x1="3" y1="17" x2="21" y2="17" />
-            </svg>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="3" y1="6" x2="17" y2="6" /><line x1="3" y1="10" x2="17" y2="10" /><line x1="3" y1="14" x2="17" y2="14" /></svg>
           )}
         </button>
       </div>

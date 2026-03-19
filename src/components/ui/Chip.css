@@ -4,10 +4,10 @@
   padding: 6px 16px;
   font-size: 13px;
   font-weight: 500;
-  border-radius: var(--fsp-radius-pill);
-  border: 1px solid var(--fsp-border);
-  background: var(--fsp-off-white);
-  color: var(--fsp-text);
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-muted);
+  color: var(--text-primary);
   cursor: pointer;
   transition: background 0.15s, color 0.15s, border-color 0.15s;
   white-space: nowrap;
@@ -20,7 +20,7 @@
 .chip--active {
   background: var(--fsp-blue);
   border-color: var(--fsp-blue);
-  color: var(--fsp-white);
+  color: var(--bg-card);
 }
 
 @media (max-width: 640px) {

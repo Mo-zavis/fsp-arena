@@ -1,14 +1,14 @@
 .tabs {
   display: flex;
   gap: 0;
-  border-bottom: 1px solid var(--fsp-border);
+  border-bottom: 1px solid var(--border);
 }
 
 .tabs-tab {
   padding: 10px 20px;
   font-size: 14px;
   font-weight: 500;
-  color: var(--fsp-text-sec);
+  color: var(--text-secondary);
   background: none;
   border: none;
   border-bottom: 2px solid transparent;
@@ -19,7 +19,7 @@
 }
 
 .tabs-tab:hover {
-  color: var(--fsp-text);
+  color: var(--text-primary);
 }
 
 .tabs-tab--active {
