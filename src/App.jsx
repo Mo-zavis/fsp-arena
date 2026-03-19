@@ -11,6 +11,7 @@ import OpsReview from './pages/ops/OpsReview'
 import AdminDashboard from './pages/admin/AdminDashboard'
 import ArenaManager from './pages/admin/ArenaManager'
 import ReferralLinks from './pages/admin/ReferralLinks'
+import FspAiChat from './components/ui/FspAiChat'
 
 function AppRoutes() {
   const location = useLocation()
@@ -51,5 +52,10 @@ function AppRoutes() {
 }
 
 export default function App() {
-  return <AppRoutes />
+  return (
+    <>
+      <AppRoutes />
+      <FspAiChat />
+    </>
+  )
 }
