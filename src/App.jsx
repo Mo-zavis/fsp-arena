@@ -1,6 +1,10 @@
+import { useState } from 'react'
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import { ArenaProvider } from './ArenaContext'
 import Nav from './components/layout/Nav'
 import AdminLayout from './components/layout/AdminLayout'
+import FspAiChat from './components/ui/FspAiChat'
+import ReviewModal from './components/ui/ReviewModal'
 import ExplorePage from './pages/explore/ExplorePage'
 import ArenaDetail from './pages/explore/ArenaDetail'
 import JoinFlow from './pages/explore/JoinFlow'
@@ -11,11 +15,11 @@ import OpsReview from './pages/ops/OpsReview'
 import AdminDashboard from './pages/admin/AdminDashboard'
 import ArenaManager from './pages/admin/ArenaManager'
 import ReferralLinks from './pages/admin/ReferralLinks'
-import FspAiChat from './components/ui/FspAiChat'
 
 function AppRoutes() {
   const location = useLocation()
   const isAdmin = location.pathname.startsWith('/admin')
+  const [showReview, setShowReview] = useState(false)
 
   if (isAdmin) {
     return (
@@ -32,7 +36,8 @@ function AppRoutes() {
             <Route path="/admin/ops" element={<OpsReview />} />
           </Routes>
         </AdminLayout>
-        <FspAiChat />
+        <FspAiChat onCreateArena={() => setShowReview(true)} />
+        {showReview && <ReviewModal onClose={() => setShowReview(false)} />}
       </>
     )
   }
@@ -55,5 +60,9 @@ function AppRoutes() {
 }
 
 export default function App() {
-  return <AppRoutes />
+  return (
+    <ArenaProvider>
+      <AppRoutes />
+    </ArenaProvider>
+  )
 }

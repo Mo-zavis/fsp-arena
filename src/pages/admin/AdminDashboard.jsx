@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { adminArenas, adminStats } from '../../data/mockData';
+import { adminStats } from '../../data/mockData';
+import { useArenas } from '../../ArenaContext';
 import './AdminDashboard.css';
 
 function fmt(n) {
@@ -15,6 +16,7 @@ function statusLabel(s) {
 }
 
 export default function AdminDashboard() {
+  const { adminArenas } = useArenas();
   return (
     <>
       {/* Header */}

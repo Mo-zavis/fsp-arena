@@ -1,11 +1,12 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { arenas } from '../../data/mockData';
+import { useArenas } from '../../ArenaContext';
 import './ExplorePage.css';
 
 const FILTERS = ['All', 'Trending', 'Beer Pong', 'Squash', 'Bowling'];
 
 export default function ExplorePage() {
+  const { arenas } = useArenas();
   const [search, setSearch] = useState('');
   const [activeFilter, setActiveFilter] = useState('All');
 
