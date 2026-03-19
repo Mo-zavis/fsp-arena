@@ -1,5 +1,6 @@
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import Nav from './components/layout/Nav'
+import AdminLayout from './components/layout/AdminLayout'
 import ExplorePage from './pages/explore/ExplorePage'
 import ArenaDetail from './pages/explore/ArenaDetail'
 import JoinFlow from './pages/explore/JoinFlow'
@@ -7,8 +8,31 @@ import JoinSuccess from './pages/explore/JoinSuccess'
 import CreateArena from './pages/create/CreateArena'
 import CaptainDashboard from './pages/dashboard/CaptainDashboard'
 import OpsReview from './pages/ops/OpsReview'
+import AdminDashboard from './pages/admin/AdminDashboard'
+import ArenaManager from './pages/admin/ArenaManager'
+import ReferralLinks from './pages/admin/ReferralLinks'
 
-export default function App() {
+function AppRoutes() {
+  const location = useLocation()
+  const isAdmin = location.pathname.startsWith('/admin')
+
+  if (isAdmin) {
+    return (
+      <AdminLayout>
+        <Routes>
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/admin/arenas" element={<AdminDashboard />} />
+          <Route path="/admin/arenas/:id" element={<ArenaManager />} />
+          <Route path="/admin/arenas/:id/referrals" element={<ReferralLinks />} />
+          <Route path="/admin/create" element={<CreateArena />} />
+          <Route path="/admin/captains" element={<Navigate to="/admin" replace />} />
+          <Route path="/admin/revenue" element={<Navigate to="/admin" replace />} />
+          <Route path="/admin/ops" element={<OpsReview />} />
+        </Routes>
+      </AdminLayout>
+    )
+  }
+
   return (
     <>
       <Nav />
@@ -24,4 +48,8 @@ export default function App() {
       </Routes>
     </>
   )
+}
+
+export default function App() {
+  return <AppRoutes />
 }

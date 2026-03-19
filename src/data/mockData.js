@@ -171,3 +171,114 @@ export const opsReviews = [
 export const availableSports = [
   'Beer Pong', 'Squash', 'Bowling', 'Soccer', 'Basketball', 'Tennis', 'Swimming', 'Golf'
 ]
+
+export const adminArenas = [
+  {
+    id: 'nelk',
+    name: 'NELK Boys Arena',
+    sport: 'Beer Pong',
+    status: 'active', // active | review | draft | ended
+    season: 1,
+    seasonStart: '2026-06-01',
+    seasonEnd: '2026-08-30',
+    daysLeft: 45,
+    totalParticipants: 2400,
+    totalCaptains: 85,
+    totalRevenue: 957600,
+    monthlyRevenue: 159600,
+    hostShare: 574560,
+    captainPool: 143640,
+    platformFee: 239400,
+    entryFee: 399,
+    premierCap: 75,
+    premierFilled: 64,
+    challengerCount: 2336,
+    splits: { host: 60, captainPool: 15, platform: 25 },
+    tiers: { gold: 50, silver: 30, bronze: 20 },
+    coverGradient: 'linear-gradient(135deg, #0000FF 0%, #1a1aff 100%)',
+  },
+  {
+    id: 'wps',
+    name: 'World Premier Squash',
+    sport: 'Squash',
+    status: 'active',
+    season: 1,
+    seasonStart: '2026-05-15',
+    seasonEnd: '2026-09-15',
+    daysLeft: 60,
+    totalParticipants: 1800,
+    totalCaptains: 62,
+    totalRevenue: 718200,
+    monthlyRevenue: 119700,
+    hostShare: 395010,
+    captainPool: 107730,
+    platformFee: 215460,
+    entryFee: 399,
+    premierCap: 75,
+    premierFilled: 48,
+    challengerCount: 1752,
+    splits: { host: 55, captainPool: 15, platform: 30 },
+    tiers: { gold: 50, silver: 30, bronze: 20 },
+    coverGradient: 'linear-gradient(135deg, #1a5c3b, #10B981)',
+  },
+  {
+    id: 'wbl',
+    name: 'World Bowling League',
+    sport: 'Bowling',
+    status: 'review',
+    season: 1,
+    seasonStart: '2026-06-01',
+    seasonEnd: '2026-07-31',
+    daysLeft: 30,
+    totalParticipants: 1200,
+    totalCaptains: 45,
+    totalRevenue: 478800,
+    monthlyRevenue: 79800,
+    hostShare: 287280,
+    captainPool: 71820,
+    platformFee: 119700,
+    entryFee: 399,
+    premierCap: 75,
+    premierFilled: 35,
+    challengerCount: 1165,
+    splits: { host: 60, captainPool: 15, platform: 25 },
+    tiers: { gold: 50, silver: 30, bronze: 20 },
+    coverGradient: 'linear-gradient(135deg, #5c4a1a, #F59E0B)',
+  },
+]
+
+export const adminStats = {
+  totalParticipants: 5400,
+  totalCaptains: 192,
+  totalRevenue: 2154600,
+  activeArenas: 2,
+  pendingReview: 1,
+  monthlyGrowth: 12.4,
+}
+
+export const revenueTimeline = [
+  { month: 'Oct', revenue: 0 },
+  { month: 'Nov', revenue: 89000 },
+  { month: 'Dec', revenue: 210000 },
+  { month: 'Jan', revenue: 380000 },
+  { month: 'Feb', revenue: 520000 },
+  { month: 'Mar', revenue: 957600 },
+]
+
+export const seasonEvents = [
+  { date: '2026-06-01', event: 'Season 1 Launch', type: 'launch' },
+  { date: '2026-07-01', event: 'Month 1 Payout Cycle', type: 'payout' },
+  { date: '2026-07-15', event: 'Mid-season Review', type: 'review' },
+  { date: '2026-08-01', event: 'Month 2 Payout Cycle', type: 'payout' },
+  { date: '2026-08-25', event: 'Pre-Flush Preview', type: 'flush' },
+  { date: '2026-08-30', event: 'Season Flush + Golden Ticket Draw', type: 'flush' },
+]
+
+export const captainTierSummary = [
+  { tier: 'Premier Gold', count: 10, poolShare: 42800, avgPayout: 4280 },
+  { tier: 'Premier Silver', count: 20, poolShare: 25680, avgPayout: 1284 },
+  { tier: 'Premier Bronze', count: 34, poolShare: 17120, avgPayout: 503 },
+  { tier: 'Challenger Gold', count: 8, poolShare: 28560, avgPayout: 3570 },
+  { tier: 'Challenger Silver', count: 16, poolShare: 17136, avgPayout: 1071 },
+  { tier: 'Challenger Bronze', count: 104, poolShare: 11424, avgPayout: 110 },
+]

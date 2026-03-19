@@ -1,0 +1,239 @@
+/* ── AdminLayout shell ─────────────────────────────────── */
+
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Archivo', sans-serif;
+}
+
+/* ── Sidebar ──────────────────────────────────────────── */
+
+.admin-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 240px;
+  background: #0f172a;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+/* Logo block */
+
+.admin-sidebar__logo {
+  padding: 28px 20px 4px;
+}
+
+.admin-sidebar__logo-mark {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1;
+}
+
+.admin-sidebar__logo-mark span {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.admin-sidebar__logo-sub {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 4px;
+}
+
+/* Navigation */
+
+.admin-sidebar__nav {
+  padding: 16px 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.admin-sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.admin-sidebar__link:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.admin-sidebar__link.active {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-left-color: var(--fsp-blue, #0000FF);
+}
+
+.admin-sidebar__link svg {
+  flex-shrink: 0;
+}
+
+/* Divider */
+
+.admin-sidebar__divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 12px 16px;
+}
+
+/* Secondary nav */
+
+.admin-sidebar__secondary {
+  padding: 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Spacer pushes user block to bottom */
+
+.admin-sidebar__spacer {
+  flex: 1;
+}
+
+/* User block */
+
+.admin-sidebar__user {
+  padding: 16px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-sidebar__user-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-sidebar__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--fsp-blue, #0000FF);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.admin-sidebar__user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-sidebar__handle {
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.admin-sidebar__name {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.admin-sidebar__back {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--fsp-blue, #0000FF);
+  text-decoration: none;
+  margin-top: 8px;
+  padding-left: 42px;
+  transition: opacity 0.15s ease;
+}
+
+.admin-sidebar__back:hover {
+  opacity: 0.8;
+}
+
+/* ── Main content ─────────────────────────────────────── */
+
+.admin-main {
+  margin-left: 240px;
+  flex: 1;
+  min-height: 100vh;
+  background: #f8fafc;
+  padding: 32px 40px;
+}
+
+/* ── Mobile hamburger toggle ──────────────────────────── */
+
+.admin-hamburger {
+  display: none;
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 200;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: none;
+  background: #0f172a;
+  color: #fff;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+/* ── Backdrop ─────────────────────────────────────────── */
+
+.admin-backdrop {
+  display: none;
+}
+
+/* ── Responsive (mobile) ─────────────────────────────── */
+
+@media (max-width: 768px) {
+  .admin-hamburger {
+    display: flex;
+  }
+
+  .admin-sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+  }
+
+  .admin-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .admin-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 90;
+  }
+
+  .admin-backdrop.visible {
+    display: block;
+  }
+
+  .admin-main {
+    margin-left: 0;
+    padding: 20px;
+    padding-top: 60px;
+  }
+}
