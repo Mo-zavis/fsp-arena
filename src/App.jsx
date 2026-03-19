@@ -19,18 +19,21 @@ function AppRoutes() {
 
   if (isAdmin) {
     return (
-      <AdminLayout>
-        <Routes>
-          <Route path="/admin" element={<AdminDashboard />} />
-          <Route path="/admin/arenas" element={<AdminDashboard />} />
-          <Route path="/admin/arenas/:id" element={<ArenaManager />} />
-          <Route path="/admin/arenas/:id/referrals" element={<ReferralLinks />} />
-          <Route path="/admin/create" element={<CreateArena />} />
-          <Route path="/admin/captains" element={<Navigate to="/admin" replace />} />
-          <Route path="/admin/revenue" element={<Navigate to="/admin" replace />} />
-          <Route path="/admin/ops" element={<OpsReview />} />
-        </Routes>
-      </AdminLayout>
+      <>
+        <AdminLayout>
+          <Routes>
+            <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/admin/arenas" element={<AdminDashboard />} />
+            <Route path="/admin/arenas/:id" element={<ArenaManager />} />
+            <Route path="/admin/arenas/:id/referrals" element={<ReferralLinks />} />
+            <Route path="/admin/create" element={<CreateArena />} />
+            <Route path="/admin/captains" element={<Navigate to="/admin" replace />} />
+            <Route path="/admin/revenue" element={<Navigate to="/admin" replace />} />
+            <Route path="/admin/ops" element={<OpsReview />} />
+          </Routes>
+        </AdminLayout>
+        <FspAiChat />
+      </>
     )
   }
 
@@ -52,10 +55,5 @@ function AppRoutes() {
 }
 
 export default function App() {
-  return (
-    <>
-      <AppRoutes />
-      <FspAiChat />
-    </>
-  )
+  return <AppRoutes />
 }
