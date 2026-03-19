@@ -62,6 +62,7 @@ const primaryNav = [
   { to: '/admin/create',   label: 'Create Arena',  icon: icons.plusCircle, end: false },
   { to: '/admin/captains', label: 'Captains',      icon: icons.users,     end: false },
   { to: '/admin/revenue',  label: 'Revenue',       icon: icons.dollar,    end: false },
+  { to: '/admin/arenas/nelk/referrals', label: 'Affiliate Manager', icon: icons.clipboard, end: false },
 ];
 
 const secondaryNav = [

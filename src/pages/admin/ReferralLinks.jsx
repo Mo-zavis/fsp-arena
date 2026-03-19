@@ -3,61 +3,59 @@ import { useParams, Link } from 'react-router-dom'
 import { adminArenas } from '../../data/mockData'
 import './ReferralLinks.css'
 
-/* ── mock data ── */
-const channels = [
+/* ── mock data: collaborators are influencers / partners promoting this arena ── */
+const collaborators = [
   {
-    id: 'ig', name: 'Instagram', type: 'Social',
-    impressions: 142000, clicks: 3890, signups: 845, paid: 234, revenue: 93366,
-    spend: 4200, trend: [120, 340, 580, 720, 845],
-    links: [
-      { id: 'ig-1', code: 'nelk-ig', label: 'Bio Link', clicks: 2100, signups: 480, paid: 134, revenue: 53466, active: true, created: '2026-02-20' },
-      { id: 'ig-2', code: 'nelk-ig-story', label: 'Story Swipe Up', clicks: 1200, signups: 260, paid: 72, revenue: 28728, active: true, created: '2026-03-01' },
-      { id: 'ig-3', code: 'nelk-ig-reel', label: 'Reel CTA', clicks: 590, signups: 105, paid: 28, revenue: 11172, active: true, created: '2026-03-10' },
-    ]
-  },
-  {
-    id: 'yt', name: 'YouTube', type: 'Content',
+    id: 'steve', name: 'SteveWillDoIt', handle: '@stevewilldoit', avatar: 'S', role: 'Co-Promoter',
+    platform: 'YouTube + Instagram', commission: 8,
     impressions: 285000, clicks: 6200, signups: 1520, paid: 410, revenue: 163590,
-    spend: 0, trend: [80, 290, 620, 1100, 1520],
+    earned: 13087, spend: 0, trend: [80, 290, 620, 1100, 1520],
     links: [
-      { id: 'yt-1', code: 'nelk-yt', label: 'Video Description', clicks: 4800, signups: 1180, paid: 320, revenue: 127680, active: true, created: '2026-03-01' },
-      { id: 'yt-2', code: 'nelk-yt-pin', label: 'Pinned Comment', clicks: 1400, signups: 340, paid: 90, revenue: 35910, active: true, created: '2026-03-05' },
+      { id: 'sw-1', code: 'steve-yt', label: 'YouTube Description', clicks: 4800, signups: 1180, paid: 320, revenue: 127680, active: true, created: '2026-03-01' },
+      { id: 'sw-2', code: 'steve-ig', label: 'Instagram Story', clicks: 1400, signups: 340, paid: 90, revenue: 35910, active: true, created: '2026-03-05' },
     ]
   },
   {
-    id: 'vip', name: 'Direct / VIP', type: 'Organic',
-    impressions: 18000, clicks: 1240, signups: 312, paid: 89, revenue: 35511,
-    spend: 0, trend: [40, 90, 160, 240, 312],
+    id: 'brad', name: 'Bradley Martyn', handle: '@bradleymartyn', avatar: 'B', role: 'Brand Ambassador',
+    platform: 'Instagram + Podcast', commission: 6,
+    impressions: 142000, clicks: 3890, signups: 845, paid: 234, revenue: 93366,
+    earned: 5602, spend: 4200, trend: [120, 340, 580, 720, 845],
     links: [
-      { id: 'vip-1', code: 'nelk-vip', label: 'VIP Launch Invite', clicks: 890, signups: 220, paid: 64, revenue: 25536, active: true, created: '2026-02-15' },
-      { id: 'vip-2', code: 'nelk-friends', label: 'Friends & Family', clicks: 350, signups: 92, paid: 25, revenue: 9975, active: true, created: '2026-02-18' },
+      { id: 'bm-1', code: 'brad-ig', label: 'Instagram Bio', clicks: 2100, signups: 480, paid: 134, revenue: 53466, active: true, created: '2026-02-20' },
+      { id: 'bm-2', code: 'brad-story', label: 'IG Story Swipe', clicks: 1200, signups: 260, paid: 72, revenue: 28728, active: true, created: '2026-03-01' },
+      { id: 'bm-3', code: 'brad-reel', label: 'Reel CTA', clicks: 590, signups: 105, paid: 28, revenue: 11172, active: true, created: '2026-03-10' },
     ]
   },
   {
-    id: 'pod', name: 'Podcast', type: 'Content',
+    id: 'nelk', name: 'NELK Boys (You)', handle: '@nelkboys', avatar: 'N', role: 'Host',
+    platform: 'All Channels', commission: 0,
+    impressions: 98000, clicks: 3340, signups: 992, paid: 284, revenue: 113316,
+    earned: 0, spend: 0, trend: [60, 170, 400, 720, 992],
+    links: [
+      { id: 'nk-1', code: 'nelk-vip', label: 'VIP Launch Invite', clicks: 890, signups: 220, paid: 64, revenue: 25536, active: true, created: '2026-02-15' },
+      { id: 'nk-2', code: 'nelk-x', label: 'Twitter Pinned', clicks: 920, signups: 205, paid: 52, revenue: 20748, active: true, created: '2026-03-02' },
+      { id: 'nk-3', code: 'nelk-email', label: 'Email Blast', clicks: 1400, signups: 460, paid: 135, revenue: 53865, active: true, created: '2026-02-25' },
+      { id: 'nk-4', code: 'nelk-friends', label: 'Friends & Family', clicks: 130, signups: 107, paid: 33, revenue: 13167, active: true, created: '2026-02-18' },
+    ]
+  },
+  {
+    id: 'danny', name: 'Danny Duncan', handle: '@dannyduncan', avatar: 'D', role: 'Affiliate',
+    platform: 'YouTube', commission: 5,
     impressions: 52000, clicks: 890, signups: 210, paid: 58, revenue: 23142,
-    spend: 1500, trend: [10, 45, 110, 170, 210],
+    earned: 1157, spend: 1500, trend: [10, 45, 110, 170, 210],
     links: [
-      { id: 'pod-1', code: 'nelk-pod', label: 'Full Send Pod #142', clicks: 560, signups: 135, paid: 38, revenue: 15162, active: false, created: '2026-03-10' },
-      { id: 'pod-2', code: 'nelk-pod2', label: 'Happy Hour Ep', clicks: 330, signups: 75, paid: 20, revenue: 7980, active: true, created: '2026-03-14' },
+      { id: 'dd-1', code: 'danny-yt', label: 'Video Mention', clicks: 560, signups: 135, paid: 38, revenue: 15162, active: false, created: '2026-03-10' },
+      { id: 'dd-2', code: 'danny-pod', label: 'Podcast Shoutout', clicks: 330, signups: 75, paid: 20, revenue: 7980, active: true, created: '2026-03-14' },
     ]
   },
   {
-    id: 'tw', name: 'Twitter / X', type: 'Social',
-    impressions: 98000, clicks: 1450, signups: 320, paid: 78, revenue: 31122,
-    spend: 800, trend: [20, 80, 150, 240, 320],
+    id: 'bob', name: 'Bob Menery', handle: '@bobmenery', avatar: 'M', role: 'Affiliate',
+    platform: 'Instagram + Twitter', commission: 5,
+    impressions: 53000, clicks: 1450, signups: 320, paid: 78, revenue: 31122,
+    earned: 1556, spend: 800, trend: [20, 80, 150, 240, 320],
     links: [
-      { id: 'tw-1', code: 'nelk-x', label: 'Pinned Tweet', clicks: 920, signups: 205, paid: 52, revenue: 20748, active: true, created: '2026-03-02' },
-      { id: 'tw-2', code: 'nelk-x-thread', label: 'Announcement Thread', clicks: 530, signups: 115, paid: 26, revenue: 10374, active: true, created: '2026-03-08' },
-    ]
-  },
-  {
-    id: 'email', name: 'Email', type: 'Owned',
-    impressions: 35000, clicks: 2100, signups: 680, paid: 195, revenue: 77805,
-    spend: 200, trend: [50, 180, 350, 520, 680],
-    links: [
-      { id: 'em-1', code: 'nelk-launch', label: 'Launch Announcement', clicks: 1400, signups: 460, paid: 135, revenue: 53865, active: true, created: '2026-02-25' },
-      { id: 'em-2', code: 'nelk-remind', label: 'Reminder Sequence', clicks: 700, signups: 220, paid: 60, revenue: 23940, active: true, created: '2026-03-05' },
+      { id: 'bo-1', code: 'bob-ig', label: 'IG Post', clicks: 920, signups: 205, paid: 52, revenue: 20748, active: true, created: '2026-03-02' },
+      { id: 'bo-2', code: 'bob-x', label: 'X Thread', clicks: 530, signups: 115, paid: 26, revenue: 10374, active: true, created: '2026-03-08' },
     ]
   },
 ]
@@ -78,19 +76,20 @@ export default function ReferralManager() {
   const [showCreate, setShowCreate] = useState(false)
   const [newLabel, setNewLabel] = useState('')
   const [newCode, setNewCode] = useState('')
-  const [newChannel, setNewChannel] = useState('ig')
+  const [newCollab, setNewCollab] = useState('nelk')
   const [copied, setCopied] = useState(null)
-  const [expandedChannel, setExpandedChannel] = useState(null)
+  const [expandedCollab, setExpandedCollab] = useState(null)
 
   // aggregates
-  const totals = channels.reduce((acc, ch) => ({
-    impressions: acc.impressions + ch.impressions,
-    clicks: acc.clicks + ch.clicks,
-    signups: acc.signups + ch.signups,
-    paid: acc.paid + ch.paid,
-    revenue: acc.revenue + ch.revenue,
-    spend: acc.spend + ch.spend,
-  }), { impressions: 0, clicks: 0, signups: 0, paid: 0, revenue: 0, spend: 0 })
+  const totals = collaborators.reduce((acc, c) => ({
+    impressions: acc.impressions + c.impressions,
+    clicks: acc.clicks + c.clicks,
+    signups: acc.signups + c.signups,
+    paid: acc.paid + c.paid,
+    revenue: acc.revenue + c.revenue,
+    spend: acc.spend + c.spend,
+    earned: acc.earned + c.earned,
+  }), { impressions: 0, clicks: 0, signups: 0, paid: 0, revenue: 0, spend: 0, earned: 0 })
 
   const ctr = totals.impressions > 0 ? ((totals.clicks / totals.impressions) * 100).toFixed(1) : 0
   const signupRate = totals.clicks > 0 ? ((totals.signups / totals.clicks) * 100).toFixed(1) : 0
@@ -119,7 +118,7 @@ export default function ReferralManager() {
     { label: 'Paid Joins', value: totals.paid, rate: convRate, color: 'var(--fsp-blue)' },
   ]
 
-  const allLinks = channels.flatMap(ch => ch.links.map(l => ({ ...l, channel: ch.name })))
+  const allLinks = collaborators.flatMap(c => c.links.map(l => ({ ...l, collaborator: c.name, handle: c.handle })))
 
   return (
     <div className="rm-page">
@@ -127,20 +126,20 @@ export default function ReferralManager() {
       <div className="rm-header">
         <div>
           <Link to={`/admin/arenas/${arena.id}`} className="rm-back">&larr; {arena.name}</Link>
-          <h1 className="rm-title">Referral Manager</h1>
-          <p className="rm-subtitle">Track acquisition performance across all channels</p>
+          <h1 className="rm-title">Affiliate Manager</h1>
+          <p className="rm-subtitle">Track performance across all collaborators and affiliates</p>
         </div>
         <button className="rm-create-btn" onClick={() => setShowCreate(true)}>
           <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2"><line x1="8" y1="2" x2="8" y2="14"/><line x1="2" y1="8" x2="14" y2="8"/></svg>
-          New Link
+          Add Collaborator Link
         </button>
       </div>
 
       {/* Tabs */}
       <div className="rm-tabs">
-        {['overview', 'channels', 'links'].map(t => (
+        {['overview', 'collaborators', 'links'].map(t => (
           <button key={t} className={`rm-tab ${tab === t ? 'active' : ''}`} onClick={() => setTab(t)}>
-            {t === 'overview' ? 'Overview' : t === 'channels' ? 'Channel Performance' : 'All Links'}
+            {t === 'overview' ? 'Overview' : t === 'collaborators' ? 'Collaborators' : 'All Links'}
           </button>
         ))}
       </div>
@@ -231,81 +230,126 @@ export default function ReferralManager() {
             </div>
           </div>
 
-          {/* Top Channels quick */}
+          {/* Top Collaborators */}
           <div className="rm-card">
-            <div className="rm-card-title">Top Channels by Revenue</div>
+            <div className="rm-card-title">Collaborator Leaderboard</div>
             <div className="rm-channel-bars">
-              {[...channels].sort((a, b) => b.revenue - a.revenue).map(ch => {
-                const pct = (ch.revenue / channels.reduce((s, c) => Math.max(s, c.revenue), 0)) * 100
+              {[...collaborators].sort((a, b) => b.revenue - a.revenue).map(c => {
+                const pct = (c.revenue / collaborators.reduce((s, x) => Math.max(s, x.revenue), 0)) * 100
                 return (
-                  <div key={ch.id} className="rm-channel-bar-row">
-                    <span className="rm-channel-bar-name">{ch.name}</span>
+                  <div key={c.id} className="rm-channel-bar-row">
+                    <div className="rm-collab-info">
+                      <div className="rm-collab-avatar" style={{ background: c.id === 'nelk' ? 'var(--fsp-blue)' : '#6366f1' }}>{c.avatar}</div>
+                      <div>
+                        <span className="rm-channel-bar-name">{c.name}</span>
+                        <span className="rm-collab-handle">{c.handle}</span>
+                      </div>
+                    </div>
                     <div className="rm-channel-bar-track">
                       <div className="rm-channel-bar-fill" style={{ width: `${pct}%` }}></div>
                     </div>
-                    <span className="rm-channel-bar-val">{fmtMoney(ch.revenue)}</span>
+                    <span className="rm-channel-bar-val">{fmtMoney(c.revenue)}</span>
                   </div>
                 )
               })}
             </div>
           </div>
+
+          {/* Commission Summary */}
+          <div className="rm-card">
+            <div className="rm-card-title">Commission Payouts</div>
+            <div className="rm-commission-table">
+              <div className="rm-commission-header">
+                <span>Collaborator</span><span>Role</span><span>Commission</span><span>Paid Joins</span><span>Earned</span>
+              </div>
+              {collaborators.filter(c => c.commission > 0).sort((a, b) => b.earned - a.earned).map(c => (
+                <div key={c.id} className="rm-commission-row">
+                  <div className="rm-commission-name">
+                    <div className="rm-collab-avatar-sm" style={{ background: '#6366f1' }}>{c.avatar}</div>
+                    <div>
+                      <div>{c.name}</div>
+                      <div className="rm-collab-handle">{c.handle}</div>
+                    </div>
+                  </div>
+                  <span className="rm-commission-role">{c.role}</span>
+                  <span>{c.commission}%</span>
+                  <span>{c.paid}</span>
+                  <span className="rm-commission-earned">{fmtMoney(c.earned)}</span>
+                </div>
+              ))}
+              <div className="rm-commission-total">
+                <span>Total Commission Owed</span>
+                <span className="rm-commission-earned">{fmtMoney(totals.earned)}</span>
+              </div>
+            </div>
+          </div>
         </>
       )}
 
-      {/* ═══ TAB: CHANNELS ═══ */}
-      {tab === 'channels' && (
+      {/* ═══ TAB: COLLABORATORS ═══ */}
+      {tab === 'collaborators' && (
         <>
           <div className="rm-channel-grid">
-            {channels.map(ch => {
-              const chCtr = ch.impressions > 0 ? ((ch.clicks / ch.impressions) * 100).toFixed(1) : 0
-              const chConv = ch.signups > 0 ? ((ch.paid / ch.signups) * 100).toFixed(1) : 0
-              const chCac = ch.spend > 0 && ch.paid > 0 ? `$${(ch.spend / ch.paid).toFixed(0)}` : 'Organic'
-              const isExpanded = expandedChannel === ch.id
+            {collaborators.map(c => {
+              const cCtr = c.impressions > 0 ? ((c.clicks / c.impressions) * 100).toFixed(1) : 0
+              const cConv = c.signups > 0 ? ((c.paid / c.signups) * 100).toFixed(1) : 0
+              const cCac = c.spend > 0 && c.paid > 0 ? `$${(c.spend / c.paid).toFixed(0)}` : 'Organic'
+              const isExpanded = expandedCollab === c.id
               return (
-                <div key={ch.id} className={`rm-channel-card ${isExpanded ? 'expanded' : ''}`}>
-                  <div className="rm-channel-top" onClick={() => setExpandedChannel(isExpanded ? null : ch.id)}>
-                    <div>
-                      <div className="rm-channel-name">{ch.name}</div>
-                      <span className="rm-channel-type">{ch.type}</span>
+                <div key={c.id} className={`rm-channel-card ${isExpanded ? 'expanded' : ''}`}>
+                  <div className="rm-channel-top" onClick={() => setExpandedCollab(isExpanded ? null : c.id)}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                      <div className="rm-collab-avatar" style={{ background: c.id === 'nelk' ? 'var(--fsp-blue)' : '#6366f1' }}>{c.avatar}</div>
+                      <div>
+                        <div className="rm-channel-name">{c.name}</div>
+                        <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+                          <span className="rm-channel-type">{c.role}</span>
+                          <span style={{ fontSize: 11, color: 'var(--fsp-text-dim)' }}>{c.platform}</span>
+                        </div>
+                      </div>
                     </div>
-                    <div className="rm-channel-revenue">{fmtMoney(ch.revenue)}</div>
+                    <div style={{ textAlign: 'right' }}>
+                      <div className="rm-channel-revenue">{fmtMoney(c.revenue)}</div>
+                      {c.commission > 0 && <div style={{ fontSize: 11, color: 'var(--fsp-text-sec)' }}>{c.commission}% commission</div>}
+                    </div>
                   </div>
 
                   {/* Mini funnel */}
                   <div className="rm-channel-funnel">
                     <div className="rm-cf-step">
-                      <div className="rm-cf-val">{fmt(ch.impressions)}</div>
+                      <div className="rm-cf-val">{fmt(c.impressions)}</div>
                       <div className="rm-cf-label">Impressions</div>
                     </div>
                     <div className="rm-cf-arrow">&rarr;</div>
                     <div className="rm-cf-step">
-                      <div className="rm-cf-val">{fmt(ch.clicks)}</div>
+                      <div className="rm-cf-val">{fmt(c.clicks)}</div>
                       <div className="rm-cf-label">Clicks</div>
-                      <div className="rm-cf-rate">{chCtr}%</div>
+                      <div className="rm-cf-rate">{cCtr}%</div>
                     </div>
                     <div className="rm-cf-arrow">&rarr;</div>
                     <div className="rm-cf-step">
-                      <div className="rm-cf-val">{fmt(ch.signups)}</div>
+                      <div className="rm-cf-val">{fmt(c.signups)}</div>
                       <div className="rm-cf-label">Signups</div>
                     </div>
                     <div className="rm-cf-arrow">&rarr;</div>
                     <div className="rm-cf-step">
-                      <div className="rm-cf-val rm-cf-bold">{fmt(ch.paid)}</div>
+                      <div className="rm-cf-val rm-cf-bold">{fmt(c.paid)}</div>
                       <div className="rm-cf-label">Paid</div>
-                      <div className="rm-cf-rate">{chConv}%</div>
+                      <div className="rm-cf-rate">{cConv}%</div>
                     </div>
                   </div>
 
                   <div className="rm-channel-meta">
-                    <span>CAC: {chCac}</span>
-                    <span>ARPU: ${ch.paid > 0 ? (ch.revenue / ch.paid).toFixed(0) : 0}</span>
-                    <span>{ch.links.length} links</span>
+                    <span>CAC: {cCac}</span>
+                    <span>ARPU: ${c.paid > 0 ? (c.revenue / c.paid).toFixed(0) : 0}</span>
+                    {c.commission > 0 && <span>Earned: {fmtMoney(c.earned)}</span>}
+                    <span>{c.links.length} links</span>
                   </div>
 
                   {/* Sparkline */}
                   <div className="rm-sparkline">
-                    {ch.trend.map((v, i) => (
-                      <div key={i} className="rm-spark-bar" style={{ height: `${(v / Math.max(...ch.trend)) * 40}px` }}></div>
+                    {c.trend.map((v, i) => (
+                      <div key={i} className="rm-spark-bar" style={{ height: `${(v / Math.max(...c.trend)) * 40}px` }}></div>
                     ))}
                   </div>
 
@@ -315,7 +359,7 @@ export default function ReferralManager() {
                       <div className="rm-cl-header">
                         <span>Link</span><span>Clicks</span><span>Signups</span><span>Paid</span><span>Revenue</span><span>Status</span>
                       </div>
-                      {ch.links.map(link => (
+                      {c.links.map(link => (
                         <div key={link.id} className="rm-cl-row">
                           <div className="rm-cl-name">
                             <div>{link.label}</div>
@@ -338,21 +382,21 @@ export default function ReferralManager() {
             })}
           </div>
 
-          {/* Channel comparison table */}
+          {/* Collaborator comparison table */}
           <div className="rm-card" style={{ marginTop: 24 }}>
-            <div className="rm-card-title">Channel Comparison</div>
+            <div className="rm-card-title">Collaborator Comparison</div>
             <div className="rm-compare-table">
               <div className="rm-compare-header">
-                <span>Channel</span><span>CTR</span><span>Signup Rate</span><span>Conv. Rate</span><span>CAC</span><span>Revenue</span>
+                <span>Collaborator</span><span>CTR</span><span>Signup Rate</span><span>Conv. Rate</span><span>CAC</span><span>Revenue</span>
               </div>
-              {[...channels].sort((a, b) => b.revenue - a.revenue).map(ch => (
-                <div key={ch.id} className="rm-compare-row">
-                  <span className="rm-compare-name">{ch.name}</span>
-                  <span>{ch.impressions > 0 ? ((ch.clicks / ch.impressions) * 100).toFixed(1) : 0}%</span>
-                  <span>{ch.clicks > 0 ? ((ch.signups / ch.clicks) * 100).toFixed(1) : 0}%</span>
-                  <span className="rm-compare-bold">{ch.signups > 0 ? ((ch.paid / ch.signups) * 100).toFixed(1) : 0}%</span>
-                  <span>{ch.spend > 0 ? `$${(ch.spend / ch.paid).toFixed(0)}` : '--'}</span>
-                  <span className="rm-compare-bold">{fmtMoney(ch.revenue)}</span>
+              {[...collaborators].sort((a, b) => b.revenue - a.revenue).map(c => (
+                <div key={c.id} className="rm-compare-row">
+                  <span className="rm-compare-name">{c.name}</span>
+                  <span>{c.impressions > 0 ? ((c.clicks / c.impressions) * 100).toFixed(1) : 0}%</span>
+                  <span>{c.clicks > 0 ? ((c.signups / c.clicks) * 100).toFixed(1) : 0}%</span>
+                  <span className="rm-compare-bold">{c.signups > 0 ? ((c.paid / c.signups) * 100).toFixed(1) : 0}%</span>
+                  <span>{c.spend > 0 ? `$${(c.spend / c.paid).toFixed(0)}` : '--'}</span>
+                  <span className="rm-compare-bold">{fmtMoney(c.revenue)}</span>
                 </div>
               ))}
             </div>
@@ -368,9 +412,9 @@ export default function ReferralManager() {
               <h3 className="rm-create-title">Create Referral Link</h3>
               <div className="rm-create-fields">
                 <div className="rm-field">
-                  <label>Channel</label>
-                  <select value={newChannel} onChange={e => setNewChannel(e.target.value)}>
-                    {channels.map(ch => <option key={ch.id} value={ch.id}>{ch.name}</option>)}
+                  <label>Collaborator</label>
+                  <select value={newCollab} onChange={e => setNewCollab(e.target.value)}>
+                    {collaborators.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
                   </select>
                 </div>
                 <div className="rm-field">
@@ -394,7 +438,7 @@ export default function ReferralManager() {
 
           <div className="rm-links-table">
             <div className="rm-lt-header">
-              <span>Link</span><span>Channel</span><span>Clicks</span><span>Signups</span><span>Paid</span><span>Revenue</span><span>Conv.</span><span>Status</span>
+              <span>Link</span><span>Collaborator</span><span>Clicks</span><span>Signups</span><span>Paid</span><span>Revenue</span><span>Conv.</span><span>Status</span>
             </div>
             {allLinks
               .sort((a, b) => b.revenue - a.revenue)
@@ -412,7 +456,7 @@ export default function ReferralManager() {
                     </button>
                   </div>
                 </div>
-                <span className="rm-lt-channel">{link.channel}</span>
+                <span className="rm-lt-channel">{link.collaborator}</span>
                 <span>{fmt(link.clicks)}</span>
                 <span>{fmt(link.signups)}</span>
                 <span className="rm-lt-bold">{fmt(link.paid)}</span>
