@@ -18,6 +18,21 @@
   font-family: inherit; font-size: 15px; color: var(--fsp-text); background: #fff;
 }
 .am-add-input:focus { outline: none; border-color: var(--fsp-blue); }
+.am-add-pct {
+  display: flex; align-items: center; border: 1px solid var(--fsp-border);
+  border-radius: 12px; overflow: hidden; flex-shrink: 0;
+}
+.am-add-pct-input {
+  width: 50px; padding: 12px 8px 12px 14px; border: none; font-family: inherit;
+  font-size: 15px; color: var(--fsp-text); text-align: right; background: #fff;
+  -moz-appearance: textfield;
+}
+.am-add-pct-input::-webkit-inner-spin-button { -webkit-appearance: none; }
+.am-add-pct-input:focus { outline: none; }
+.am-add-pct-sign {
+  padding: 12px 12px 12px 2px; font-size: 15px; color: var(--fsp-text-sec);
+  background: #fff;
+}
 .am-add-btn {
   padding: 12px 24px; background: var(--fsp-blue); color: #fff; border: none;
   border-radius: 12px; font-size: 14px; font-weight: 500; white-space: nowrap;
@@ -75,6 +90,7 @@
   font-size: 13px; color: var(--fsp-blue); font-family: monospace;
   display: flex; align-items: center; gap: 8px; margin-bottom: 4px;
 }
+.am-profile-commission { font-size: 13px; font-weight: 600; color: var(--fsp-blue); margin-bottom: 2px; }
 .am-profile-date { font-size: 12px; color: var(--fsp-text-dim); }
 
 /* ── Funnel ── */
@@ -95,13 +111,14 @@
 .am-funnel-rate { font-size: 11px; font-weight: 600; color: var(--fsp-blue); }
 
 /* ── KPIs ── */
-.am-kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.am-kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 .am-kpi {
   background: #fff; border: 1px solid var(--fsp-border); border-radius: 14px;
   padding: 20px; text-align: center;
 }
 .am-kpi-val { font-size: 24px; font-weight: 600; color: var(--fsp-text); margin-bottom: 4px; }
 .am-blue { color: var(--fsp-blue); }
+.am-green { color: var(--fsp-green); }
 .am-kpi-label {
   font-size: 11px; font-weight: 500; text-transform: uppercase;
   letter-spacing: 0.08em; color: var(--fsp-text-sec);
@@ -120,7 +137,7 @@
   .am-funnel-arrow svg { display: none; }
   .am-funnel-step { min-width: calc(33% - 12px); }
 
-  .am-kpis { grid-template-columns: 1fr; }
+  .am-kpis { grid-template-columns: repeat(2, 1fr); }
 
   .am-profile { flex-direction: column; text-align: center; }
   .am-profile-link { justify-content: center; flex-wrap: wrap; }

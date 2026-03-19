@@ -5,22 +5,22 @@ import './ReferralLinks.css'
 
 const initialAffiliates = [
   {
-    id: 1, name: 'SteveWillDoIt', code: 'steve',
+    id: 1, name: 'SteveWillDoIt', code: 'steve', commission: 8,
     clicks: 6200, signups: 1520, paid: 410, revenue: 163590,
     created: '2026-02-20',
   },
   {
-    id: 2, name: 'Bradley Martyn', code: 'brad',
+    id: 2, name: 'Bradley Martyn', code: 'brad', commission: 6,
     clicks: 3890, signups: 845, paid: 234, revenue: 93366,
     created: '2026-03-01',
   },
   {
-    id: 3, name: 'Danny Duncan', code: 'danny',
+    id: 3, name: 'Danny Duncan', code: 'danny', commission: 5,
     clicks: 890, signups: 210, paid: 58, revenue: 23142,
     created: '2026-03-10',
   },
   {
-    id: 4, name: 'Bob Menery', code: 'bob',
+    id: 4, name: 'Bob Menery', code: 'bob', commission: 5,
     clicks: 1450, signups: 320, paid: 78, revenue: 31122,
     created: '2026-03-05',
   },
@@ -31,6 +31,7 @@ export default function AffiliateManager() {
   const arena = adminArenas.find(a => a.id === id) || adminArenas[0]
   const [affiliates, setAffiliates] = useState(initialAffiliates)
   const [newName, setNewName] = useState('')
+  const [newCommission, setNewCommission] = useState(5)
   const [selectedId, setSelectedId] = useState(null)
   const [copied, setCopied] = useState(null)
 
@@ -45,10 +46,12 @@ export default function AffiliateManager() {
       id: Date.now(),
       name: newName.trim(),
       code,
+      commission: newCommission,
       clicks: 0, signups: 0, paid: 0, revenue: 0,
       created: new Date().toISOString().slice(0, 10),
     }])
     setNewName('')
+    setNewCommission(5)
   }
 
   const copyLink = (code, affId) => {
@@ -69,6 +72,7 @@ export default function AffiliateManager() {
     const convRate = selected.clicks > 0 ? ((selected.paid / selected.clicks) * 100).toFixed(1) : 0
     const signupRate = selected.clicks > 0 ? ((selected.signups / selected.clicks) * 100).toFixed(1) : 0
     const paidRate = selected.signups > 0 ? ((selected.paid / selected.signups) * 100).toFixed(1) : 0
+    const earned = Math.round(selected.revenue * selected.commission / 100)
 
     return (
       <div className="am-page">
@@ -87,6 +91,7 @@ export default function AffiliateManager() {
                 {copied === selected.id ? 'Copied' : 'Copy'}
               </button>
             </div>
+            <div className="am-profile-commission">{selected.commission}% commission</div>
             <div className="am-profile-date">Added {selected.created}</div>
           </div>
         </div>
@@ -119,7 +124,7 @@ export default function AffiliateManager() {
         <div className="am-kpis">
           <div className="am-kpi">
             <div className="am-kpi-val am-blue">{fmtMoney(selected.revenue)}</div>
-            <div className="am-kpi-label">Revenue</div>
+            <div className="am-kpi-label">Revenue Generated</div>
           </div>
           <div className="am-kpi">
             <div className="am-kpi-val">{convRate}%</div>
@@ -128,6 +133,10 @@ export default function AffiliateManager() {
           <div className="am-kpi">
             <div className="am-kpi-val">{selected.paid > 0 ? fmtMoney(Math.round(selected.revenue / selected.paid)) : '--'}</div>
             <div className="am-kpi-label">Revenue per Join</div>
+          </div>
+          <div className="am-kpi">
+            <div className="am-kpi-val am-green">{fmtMoney(earned)}</div>
+            <div className="am-kpi-label">{selected.commission}% Commission Earned</div>
           </div>
         </div>
       </div>
@@ -151,6 +160,17 @@ export default function AffiliateManager() {
           onChange={e => setNewName(e.target.value)}
           onKeyDown={e => e.key === 'Enter' && handleAdd()}
         />
+        <div className="am-add-pct">
+          <input
+            className="am-add-pct-input"
+            type="number"
+            min="0"
+            max="100"
+            value={newCommission}
+            onChange={e => setNewCommission(Math.min(100, Math.max(0, Number(e.target.value))))}
+          />
+          <span className="am-add-pct-sign">%</span>
+        </div>
         <button className="am-add-btn" onClick={handleAdd} disabled={!newName.trim()}>Generate Link</button>
       </div>
 
@@ -167,6 +187,7 @@ export default function AffiliateManager() {
             </div>
             <div className="am-item-right">
               <div className="am-item-stats">
+                <span>{aff.commission}%</span>
                 <span>{fmt(aff.clicks)} clicks</span>
                 <span>{fmt(aff.paid)} paid</span>
                 <span className="am-item-revenue">{fmtMoney(aff.revenue)}</span>
