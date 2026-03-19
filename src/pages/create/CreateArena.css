@@ -592,3 +592,73 @@
 .ca-select-row .ca-field {
   flex: 1;
 }
+
+@media (max-width: 640px) {
+  .ca-shell {
+    padding: 72px 16px 32px;
+  }
+  .ca-title {
+    font-size: 20px;
+  }
+  .ca-date-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  .ca-number-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  .ca-select-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  .ca-input,
+  .ca-textarea,
+  .ca-select,
+  .ca-input-number {
+    min-height: 44px;
+    font-size: 16px;
+  }
+  .ca-slider-row {
+    flex-wrap: wrap;
+  }
+  .ca-slider-label {
+    min-width: 100%;
+    margin-bottom: 4px;
+  }
+  .ca-bottom-bar {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .ca-btn-continue,
+  .ca-btn-back {
+    width: 100%;
+    text-align: center;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ca-btn-continue {
+    order: -1;
+  }
+  .ca-sport-remove {
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ca-upload-gallery-row {
+    flex-wrap: wrap;
+  }
+  .ca-upload-gallery-slot {
+    width: calc(50% - 4px);
+    height: auto;
+    aspect-ratio: 1;
+  }
+  .ca-summary-row {
+    font-size: 13px;
+    gap: 8px;
+  }
+}

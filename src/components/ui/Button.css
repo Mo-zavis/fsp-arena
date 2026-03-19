@@ -79,3 +79,11 @@
 .btn--red:hover:not(:disabled) {
   opacity: 0.9;
 }
+
+@media (max-width: 640px) {
+  .btn {
+    min-height: 44px;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}

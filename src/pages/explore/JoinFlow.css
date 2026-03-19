@@ -414,3 +414,31 @@
   font-weight: 700;
   color: var(--fsp-text);
 }
+
+@media (max-width: 640px) {
+  .jf-topbar__back {
+    width: 44px;
+    height: 44px;
+  }
+  .jf-stepper__line {
+    width: 36px;
+  }
+  .jf-btn {
+    min-height: 48px;
+    font-size: 15px;
+  }
+  .jf-sport-card {
+    min-height: 52px;
+    padding: 14px 16px;
+  }
+  .jf-pay-row {
+    min-height: 52px;
+  }
+  .jf-reward-preview__body {
+    flex-direction: column;
+  }
+  .jf-reward-preview__img {
+    width: 100%;
+    height: 140px;
+  }
+}

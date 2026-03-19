@@ -456,3 +456,88 @@
 .cd-tier-row__direction--new {
   color: var(--fsp-blue, #0000FF);
 }
+
+@media (max-width: 640px) {
+  .captain-dashboard {
+    padding: 72px 16px 32px;
+  }
+  /* Tabs: horizontal scroll */
+  .cd-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .cd-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .cd-tab {
+    min-height: 44px;
+    flex-shrink: 0;
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+  /* Chips: wrap and touch-size */
+  .cd-chips {
+    flex-wrap: wrap;
+  }
+  .cd-chip {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+  /* Table: horizontal scroll wrapper */
+  .cd-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+  .cd-table th,
+  .cd-table td {
+    padding: 10px 10px;
+    font-size: 13px;
+  }
+  /* Status card */
+  .cd-status-card {
+    padding: 20px 16px;
+  }
+  .cd-status-card__tier {
+    font-size: 20px;
+  }
+  .cd-status-grid__item-value {
+    font-size: 18px;
+  }
+  /* Payout rows: stack on narrow screens */
+  .cd-payout-row {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .cd-payout-row__tier {
+    flex-basis: 100%;
+    order: 3;
+  }
+  /* Total card */
+  .cd-total-card {
+    padding: 24px 16px;
+  }
+  .cd-total-card__amount {
+    font-size: 28px;
+  }
+  /* Referral link row */
+  .cd-referral-link-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cd-copy-btn {
+    min-height: 44px;
+    width: 100%;
+    text-align: center;
+  }
+  /* Tier rows */
+  .cd-tier-row {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+}

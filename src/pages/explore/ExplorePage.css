@@ -103,8 +103,30 @@
 }
 
 @media (max-width: 640px) {
+  .explore-page {
+    padding: 72px 16px 32px;
+  }
+  .explore-title {
+    font-size: 22px;
+  }
   .explore-grid {
     grid-template-columns: 1fr;
+  }
+  .explore-chip {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+  .explore-search__input {
+    min-height: 44px;
+    font-size: 16px;
+  }
+  .arena-card__btn {
+    min-height: 44px;
+    padding: 10px 20px;
+    font-size: 13px;
   }
 }
 

@@ -24,3 +24,12 @@
   letter-spacing: 0.05em;
   color: var(--fsp-text-sec);
 }
+
+@media (max-width: 640px) {
+  .kpi-card {
+    padding: 16px 12px;
+  }
+  .kpi-label {
+    font-size: 11px;
+  }
+}

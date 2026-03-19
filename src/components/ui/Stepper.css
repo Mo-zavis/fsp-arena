@@ -47,3 +47,13 @@
 .stepper-line--done {
   background: var(--fsp-green);
 }
+
+@media (max-width: 640px) {
+  .stepper-line {
+    width: 20px;
+  }
+  .stepper-dot {
+    width: 28px;
+    height: 28px;
+  }
+}
